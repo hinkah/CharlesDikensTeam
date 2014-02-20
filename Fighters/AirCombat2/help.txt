@@ -1,0 +1,27 @@
+﻿   
+   
+    ##  #  # # ###     # # ### #   ##  
+   #   # # ### #       # # #   #   # # 
+   # # ### ### ##      ### ##  #   ##  
+   # # # # # # #       # # #   #   #   
+    ## # # # # ###     # # ### ### #   
+
+
+Air Combat is a console game in which a player controls a spaceship and tries to avoid the falling objects they might come across. The player loses the game if he either runs out of fuel or loses all of his life points.
+At the bottom left side of the console the following information is shown:
+
+1. The distance that the spaceship has passed (Starting from 0 miles)
+
+2. The fuel remaining (Starting from 500 initial liters of fuel)
+
+3. The life points remaining (Starting from 200 initial points)
+
+The player is able to move upwards, downwards, to the left, to the right and shoot. Navigation is executed by using the keyboard arrows. Shooting is executed by pressing the space key.
+
+Each of the following actions costs one point of fuel. If the player gets hit by a rocket, they lose 8 life points. If they catch a LIFE or a FUEL bonus, they gain 200 fuel units or 50 life ones respectively.
+
+The spaceship has also got a weapon which can be used once at every 5 iterations of the game or approximately once per 0.6 seconds. Once the weapon is fired it destroys the first object it hits.
+
+The game has also a pause function - it is activated by pressing the combination of Ctrl + C.
+
+   To start the game press ENTER.

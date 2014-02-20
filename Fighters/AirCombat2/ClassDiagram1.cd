@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CollisionData" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\CollisionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionDispatcher" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAIAAACAAAAAAAAAACAAAABAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>GameLogic\CollisionDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyboardInterface" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAQAEAAEAAAAAAgAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GameLogic\KeyboardInterface.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Fire" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BASAAAAAAIAAACAAAAAAAAABAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Fire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fuel" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BASAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Fuel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BASAAAAAAIAAABAQAAAAABAQAQAAAAQAAIAAgAGAEAA=</HashCode>
+      <FileName>GameObjects\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Life" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BASAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Life.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatrixCoords" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAwAEAAAAAAAEAAoAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MatrixCoords.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovingObject" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MovingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Racket" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BASAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Racket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ship" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAWAAAQAAIEABAAgAAAAAAAUAAAAgARIQAAAQAAAAAA=</HashCode>
+      <FileName>GameObjects\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Star" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Star.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Init" Collapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAABAAAAAAEARAAAAGAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Init.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAgAAAAAAAAAAAIQAAAAgAAAAAACAA=</HashCode>
+      <FileName>MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleRenderer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAAAAAAAAAAAAABAAAAIAAAAAAAAQACAAAAQAAAA=</HashCode>
+      <FileName>Renderer\ConsoleRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StartGame" Collapsed="true">
+    <Position X="18.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAgABAQQBAIACAFGAAQAEAAAAAIAAABBAAIAAA=</HashCode>
+      <FileName>StartGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirCombat2.GameLogic.Engine" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAFAIAAEAAAAAAAAQAAAABgoAiAAAAAAAAACggQI=</HashCode>
+      <FileName>GameLogic\Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ICollidable" Collapsed="true">
+    <Position X="15" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>GameLogic\IColliable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IObjectProducer" Collapsed="true">
+    <Position X="16.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>GameLogic\IObjectProducer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IUserInterface" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAQAEAAEAAAAAAgAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GameLogic\IUserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IRenderable" Collapsed="true">
+    <Position X="18.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Renderer\IRenderable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IRenderer" Collapsed="true">
+    <Position X="15" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Renderer\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
