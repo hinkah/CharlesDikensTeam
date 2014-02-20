@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace FightersCon
 {
-    public class MatrixCoords
+    public struct MatrixCoords
     {
         // constructor (template) - we create initial values for the rows and the columns.
-        public MatrixCoords(int row, int col) 
+        public MatrixCoords(int row, int col) : this() 
         {
             this.Row = row;
             this.Col = col;
@@ -26,6 +21,7 @@ namespace FightersCon
             return new MatrixCoords(a.Row + b.Row, a.Col + b.Col);
         }
 
+
         // this method extracts the coordinates (x - x, y - y) of the respective object.
         public static MatrixCoords operator -(MatrixCoords a, MatrixCoords b) 
         {
@@ -33,9 +29,9 @@ namespace FightersCon
         }
 
         // this method returns an answer to the question whether two cordinates are equal.
-        public override bool Equals(object obj) 
+        public override bool Equals(object obj)
         {
-            MatrixCoords objAsMatrixCoords = obj as MatrixCoords;
+            MatrixCoords objAsMatrixCoords = (MatrixCoords)obj;
 
             return objAsMatrixCoords.Row == this.Row && objAsMatrixCoords.Col == this.Col;
         }

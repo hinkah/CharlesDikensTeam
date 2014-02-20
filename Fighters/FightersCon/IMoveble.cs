@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightersCon
 {
-    public interface IRenderable
+    interface IMoveble
     {
-        MatrixCoords GetTopLeft();
-
-        char[,] GetImage();
     }
-
 }
