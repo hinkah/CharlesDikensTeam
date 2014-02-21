@@ -11,8 +11,8 @@ namespace FightersCon
         private const int WolfAttackPower = 200;
         private const int WolfDefencePower = 100;
 
-        public Wolf(MatrixCoords topLeft, char[,] body)
-            : base(topLeft, body, WolfAttackPower, WolfDefencePower)
+        public Wolf(MatrixCoords topLeft, char[,] body, MatrixCoords speed)
+            : base(topLeft, body, speed, WolfAttackPower, WolfDefencePower)
         {
         }
     }

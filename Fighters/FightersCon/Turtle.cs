@@ -11,8 +11,8 @@ namespace FightersCon
         private const int TurtleAttackPower = 0;
         private const int TurtleDefencePower = 100;
 
-        public Turtle(MatrixCoords topLeft, char[,] body)
-            : base(topLeft, body, TurtleAttackPower, TurtleDefencePower)
+        public Turtle(MatrixCoords topLeft, char[,] body, MatrixCoords speed)
+            : base(topLeft, body, speed, TurtleAttackPower, TurtleDefencePower)
         {
             this.Bonus = DefensePower;
         }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace FightersCon
 {
-    interface IMoveble
+    public interface IMovable
     {
+        MatrixCoords Speed
+        {
+            get;
+        }
+
+        void UpdatePosition();
     }
 }

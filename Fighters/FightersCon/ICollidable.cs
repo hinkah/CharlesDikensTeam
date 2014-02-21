@@ -8,7 +8,7 @@ namespace FightersCon
 {
     public interface ICollidable
     {
-        bool CanCollideWith(string objectType); // when an object inherits this interface, it is capable of colliding.
+        bool CanCollideWith(string objectType); // when an object inherits this interface, it can collide.
 
         List<MatrixCoords> GetCollisionProfile();
 

@@ -11,13 +11,11 @@ namespace FightersCon
         bool IsDestroyed
         {
             get;
-            set;
         }
 
         int Life
         {
             get;
-            set;
         }
 
     }

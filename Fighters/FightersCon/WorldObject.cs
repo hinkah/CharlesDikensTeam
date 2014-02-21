@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FightersCon
 {
@@ -36,6 +32,13 @@ namespace FightersCon
             {
                 this.topLeft = new MatrixCoords(value.Row, value.Col); // through the coordinates we move the object to the desired place.
             }
+        }
+
+        public abstract void Update(); // update which is used by all objects which inherit this class.
+
+        public virtual MatrixCoords GetTopLeft() 
+        {
+            return this.TopLeft;
         }
 
         // this method returns the same matrix as the previous method but as a public one,

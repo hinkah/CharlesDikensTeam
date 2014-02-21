@@ -20,6 +20,5 @@ namespace FightersCon
             set;
         }
 
-        int GetTargetIndex(List<WorldObject> availableTargets);
     }
 }
