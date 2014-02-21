@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FightersCon
 {
-    public abstract class WorldObject : IWorldObject, IRenderable
+    public abstract class WorldObject : IWorldObject, IRenderable, IObjectProducer
     {
+        public const string CollisionGroupString = "object"; // all objects inherit this class called WorldObject.
         public const int InitialLife = 100;
 
         protected MatrixCoords topLeft;                     
@@ -48,6 +50,42 @@ namespace FightersCon
             return this.CopyBodyMatrix(this.body);  
         }
 
+        public virtual void RespondToCollision(CollisionData collisionData) // this method returns an answer to what happens after collision.
+        {
+        }
+
+        public virtual bool CanCollideWith(string otherCollisionGroupString) // this method returns an answer to whether collisions with other objects are possible.
+        {
+            return WorldObject.CollisionGroupString == otherCollisionGroupString;
+        }
+
+        public virtual string GetCollisionGroupString() // returns the name the objects.
+        {
+            return WorldObject.CollisionGroupString;
+        }
+
+        public virtual List<MatrixCoords> GetCollisionProfile() // returns the profile containing the points at which a collision is posiible.
+        {
+            List<MatrixCoords> profile = new List<MatrixCoords>(); // a list containing all the collision positions
+
+            int bodyRows = this.body.GetLength(0);
+            int bodyCols = this.body.GetLength(1);
+
+            for (int row = 0; row < bodyRows; row++)
+            {
+                for (int col = 0; col < bodyCols; col++)
+                {
+                    if (body[row, col] == ' ') continue;
+                    profile.Add(new MatrixCoords(row + this.topLeft.Row, col + this.topLeft.Col));
+                }
+            }
+
+            return profile;
+        }
+        public virtual IEnumerable<WorldObject> ProduceObjects() // this method returns a list of the game objects.
+        {
+            return new List<WorldObject>();
+        }
         // this method makes a copy of the matrix of the object body and returns a new matrix with a different name
         private char[,] CopyBodyMatrix(char[,] matrixToCopy) 
         {

@@ -12,7 +12,8 @@ namespace FightersCon
         private const int RabbitDefencePower = 0;
 
         public Rabbit(MatrixCoords topLeft, char[,] body, MatrixCoords speed)
-            : base(topLeft, body, speed, RabbitAttackPower, RabbitDefencePower)
+            : base(topLeft, body, speed,
+            RabbitAttackPower, RabbitDefencePower)
         {
             this.Bonus = this.Life;
         }
