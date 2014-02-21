@@ -10,11 +10,13 @@ namespace FightersCon
     {
         private const int RabbitAttackPower = 0;
         private const int RabbitDefencePower = 0;
+        private const int RabbitLife = 100;
 
         public Rabbit(MatrixCoords topLeft, char[,] body, MatrixCoords speed)
             : base(topLeft, body, speed,
             RabbitAttackPower, RabbitDefencePower)
         {
+            this.Life = RabbitLife;
             this.Bonus = this.Life;
         }
     }
