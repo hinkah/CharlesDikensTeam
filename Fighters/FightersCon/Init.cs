@@ -16,28 +16,28 @@ public static class Init
     public static int WhootPower=10;
 
     //hero
-    public static int SuperHeroLife = 1000;
-    public static int SuperHeroAttack = 300;
-    public static int SuperHeroDefence = 300;
-    public static int SuperHeroShoot=10;
-    public static int SuperHeroGold = 100;
-    public static int SuperHeroExpirience=1;
+    public const int SuperHeroLife = 1000;
+    public const int SuperHeroAttack = 300;
+    public const int SuperHeroDefence = 300;
+    public const int SuperHeroShoot = 10;
+    public const int SuperHeroGold = 100;
+    public const int SuperHeroExpirience = 1;
 
     //other person
-    public static int PersonLife = 200;
-    public static int PersonAttack=200;
-    public static int PersonDefence = 200;
-    public static int PersonShoot=20;
-    public static int PersonGold=100;
-
+    public const int PersonLife = 200;
+    public const int PersonAttack=200;
+    public const int PersonDefence = 200;
+    public const int PersonShoot=20;
+    public const int PersonGold=100;
+                   
     //animal
-    public static int AnimalLife=100;
-    public static int AnimalAttack=50;
-    public static int AnimalDefence = 100;
-    public static int AnimalBonus=100;
+    public const int AnimalLife=100;
+    public const int AnimalAttack=50;
+    public const int AnimalDefence = 100;
+    public const int AnimalBonus=100;
     
     //static objects
-    public static int StaticLife=20; //for static destroyable objects ok
+    public const int StaticLife=20; //for static destroyable objects ok
     
     
 
