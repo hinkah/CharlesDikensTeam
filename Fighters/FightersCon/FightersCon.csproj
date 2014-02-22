@@ -69,14 +69,14 @@
     <Compile Include="MovableObjects\SuperHero.cs" />
     <Compile Include="MovableObjects\Turtle.cs" />
     <Compile Include="MovableObjects\Wolf.cs" />
+    <Compile Include="StaticObjects\House.cs" />
+    <Compile Include="StaticObjects\Tree.cs" />
     <Compile Include="WorldObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StaticObjects\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

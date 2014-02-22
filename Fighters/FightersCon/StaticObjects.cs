@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FightersCon
+﻿namespace FightersCon
 {
     public abstract class StaticObject : WorldObject
     {
-        protected StaticObject(MatrixCoords topLeft, char[,] body, int size)
+        protected StaticObject(MatrixCoords topLeft, char[,] body)
             : base(topLeft, body)
         {
-            this.Size = size;
         }
 
-        public int Size { get; set; }
+        public bool IsDestroyable { get; protected set; }
     }
 }

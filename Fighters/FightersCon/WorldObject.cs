@@ -8,8 +8,8 @@ namespace FightersCon
         public const string CollisionGroupString = "object"; // all objects inherit this class called WorldObject.
         public const int InitialLife = 100;
 
-        protected MatrixCoords topLeft;                     
-        protected char[,] body;
+        private MatrixCoords topLeft;                     
+        private char[,] body;
 
         protected WorldObject(MatrixCoords topLeft, char[,] body) 
         {
