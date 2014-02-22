@@ -1,4 +1,6 @@
-﻿namespace FightersCon.StaticObjects
+﻿using System;
+
+namespace FightersCon.StaticObjects
 {
     public class Fence : StaticObject
     {
@@ -7,6 +9,11 @@
         {
             IsDestroyable = true;
             this.Life = Init.StaticLife;
+        }
+        public override void Update()
+        {
+            // TODO: Implement this method
+            throw new NotImplementedException();
         }
     }
 }

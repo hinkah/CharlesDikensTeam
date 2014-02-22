@@ -1,4 +1,6 @@
-﻿namespace FightersCon.StaticObjects
+﻿using System;
+
+namespace FightersCon.StaticObjects
 {
     public class House : StaticObject
     {
@@ -7,6 +9,11 @@
         {
             IsDestroyable = false;
             this.Life = int.MaxValue;
+        }
+        public override void Update()
+        {
+            // TODO: Implement this method
+            throw new NotImplementedException();
         }
     }
 }
