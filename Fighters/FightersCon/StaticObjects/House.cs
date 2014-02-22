@@ -12,8 +12,6 @@ namespace FightersCon.StaticObjects
         }
         public override void Update()
         {
-            // TODO: Implement this method
-            throw new NotImplementedException();
         }
     }
 }
