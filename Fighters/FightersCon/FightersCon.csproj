@@ -69,6 +69,7 @@
     <Compile Include="MovableObjects\SuperHero.cs" />
     <Compile Include="MovableObjects\Turtle.cs" />
     <Compile Include="MovableObjects\Wolf.cs" />
+    <Compile Include="StaticObjects\Fence.cs" />
     <Compile Include="StaticObjects\House.cs" />
     <Compile Include="StaticObjects\Tree.cs" />
     <Compile Include="WorldObject.cs" />

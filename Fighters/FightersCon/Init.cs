@@ -37,7 +37,7 @@ public static class Init
     public static int AnimalBonus=100;
     
     //static objects
-    public static int StaticLife=20; //for static destroyable objects
+    public static int StaticLife=20; //for static destroyable objects ok
     
     
 

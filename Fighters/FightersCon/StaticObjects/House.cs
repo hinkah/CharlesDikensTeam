@@ -6,6 +6,7 @@
             : base(topLeft, body)
         {
             IsDestroyable = false;
+            this.Life = int.MaxValue;
         }
     }
 }

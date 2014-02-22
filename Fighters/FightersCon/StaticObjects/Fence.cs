@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FightersCon.StaticObjects
+﻿namespace FightersCon.StaticObjects
 {
-    class Fence
+    public class Fence : StaticObject
     {
+        public Fence(MatrixCoords topLeft, char[,] body)
+            : base(topLeft, body)
+        {
+            IsDestroyable = true;
+            this.Life = int.MaxValue;
+        }
     }
 }
