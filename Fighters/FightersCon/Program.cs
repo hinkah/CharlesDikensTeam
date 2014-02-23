@@ -12,22 +12,25 @@ namespace FightersCon
     {
         public static void MovingBoundarys(MovableObject obj)
         {
-            if (obj.TopLeft.Col == 0)
+            if (obj is SuperHero == false)
             {
-                obj.Speed = new MatrixCoords(0, 1);
-            }
-            if (obj.TopLeft.Col == 94)
-            {
-                obj.Speed = new MatrixCoords(0, -1);
-            } 
-            if (obj.TopLeft.Row == 0)
-            {
-                obj.Speed = new MatrixCoords(1, 0);
-            }
-            if (obj.TopLeft.Row == 28)
-            {
-                obj.Speed = new MatrixCoords(-1, 0);
-            }
+                if (obj.TopLeft.Col == 0)
+                {
+                    obj.Speed = new MatrixCoords(0, 1);
+                }
+                if (obj.TopLeft.Col == 94)
+                {
+                    obj.Speed = new MatrixCoords(0, -1);
+                }
+                if (obj.TopLeft.Row == 0)
+                {
+                    obj.Speed = new MatrixCoords(1, 0);
+                }
+                if (obj.TopLeft.Row == 28)
+                {
+                    obj.Speed = new MatrixCoords(-1, 0);
+                }
+            }            
         }
         static void Main(string[] args)
         {
