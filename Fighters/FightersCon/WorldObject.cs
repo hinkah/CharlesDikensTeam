@@ -10,7 +10,7 @@ namespace FightersCon
         private MatrixCoords topLeft;
         protected char[,] body;
 
-        protected WorldObject(MatrixCoords topLeft, char[,] body) 
+        protected WorldObject(MatrixCoords topLeft, char[,] body)
         {
             this.TopLeft = topLeft;
             this.body = body;
@@ -18,26 +18,18 @@ namespace FightersCon
             this.Life = InitialLife;
         }
 
-        public int Life { get; protected set; }             
-        public bool IsDestroyed { get; set; }     
-        public ConsoleColor Color { get; set; }
+        public int Life { get; protected set; }
+        public bool IsDestroyed { get; set; }
 
-        public MatrixCoords TopLeft                        
+        public MatrixCoords TopLeft
         {
-            get
-            { 
-                return new MatrixCoords(topLeft.Row, topLeft.Col); 
-            }
-
-            set
-            {
-                this.topLeft = new MatrixCoords(value.Row, value.Col);
-            }
+            get { return this.topLeft; }
+            set { this.topLeft = value; }
         }
 
-        public abstract void Update(); 
+        public abstract void Update();
 
-        public virtual MatrixCoords GetTopLeft() 
+        public virtual MatrixCoords GetTopLeft()
         {
             return this.TopLeft;
         }
@@ -46,11 +38,12 @@ namespace FightersCon
         //so other objects could also be able to use it. 
         public virtual char[,] GetImage()                   //IRenderable interface
         {
-            return this.body;  
+            return this.body;
         }
 
         public virtual void RespondToCollision(CollisionData collisionData) // this method returns an answer to what happens after collision.
         {
+
         }
 
         public virtual IEnumerable<WorldObject> ProduceObjects() // this method returns a list of the game objects.
