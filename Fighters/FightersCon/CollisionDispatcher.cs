@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FightersCon
 {
@@ -33,7 +31,7 @@ namespace FightersCon
 
             foreach (var movingObject in movingObjectWithoutHero)
             {
-                if (IsCollision(superHero, movingObject, true))
+                if (IsCollided(superHero, movingObject, DirectionType.All))
                 {
                     if (superHero.Life < movingObject.AttackPower)
                     {
@@ -43,13 +41,12 @@ namespace FightersCon
                     {
                         movingObject.IsDestroyed = true;
                     }
-                    
                 }
             }
 
             foreach (var staticObject in staticObjects)
             {
-                if (IsCollision(superHero, staticObject, false))
+                if (IsCollided(superHero, staticObject, DirectionType.All))
                 {
 
                 }
@@ -59,7 +56,7 @@ namespace FightersCon
             {
                 foreach (var staticObject in staticObjects)
                 {
-                    if (IsCollision(moving, staticObject, false))
+                    if (IsCollided(moving, staticObject, DirectionType.All))
                     {
                         MatrixCoords newSpeed = new MatrixCoords(moving.Speed.Row, moving.Speed.Col);
                         newSpeed.Row *= -1;
@@ -76,7 +73,7 @@ namespace FightersCon
                     MovableObject obj1 = movingObjectWithoutHero[i];
                     MovableObject obj2 = movingObjectWithoutHero[j];
 
-                    if (IsCollision(obj1, obj2, false))
+                    if (IsCollided(obj1, obj2, DirectionType.All))
                     {
                         MatrixCoords newSpeed = new MatrixCoords(obj1.Speed.Row, obj1.Speed.Col);
                         newSpeed.Row *= -1;
@@ -91,34 +88,71 @@ namespace FightersCon
             }
         }
 
-        public static bool IsCollision(WorldObject first, WorldObject second, bool overlap)
+        public static bool IsCollided(WorldObject first, WorldObject second, DirectionType direction)
         {
-            int overlapSize = 0;
-            if (overlap)
+            int firstTop = first.TopLeft.Row;
+            int firstLeft = first.TopLeft.Col;
+            int firstHeight = first.GetImage().GetLength(0);
+            int firstWidth = first.GetImage().GetLength(1);
+            int firstBottom = first.TopLeft.Row + firstHeight;
+            int firstRight = first.TopLeft.Col + firstWidth;
+
+            int secondTop = second.TopLeft.Row;
+            int secondLeft = second.TopLeft.Col;
+            int secondHeight = second.GetImage().GetLength(0);
+            int secondWidth = second.GetImage().GetLength(1);
+            int secondBottom = second.TopLeft.Row + secondHeight;
+            int secondRight = second.TopLeft.Col + secondWidth;
+
+            bool horizontalMatch = false;
+            if (firstHeight >= secondHeight)
             {
-                overlapSize = 1;
+                if (secondTop >= firstTop && secondTop <= firstBottom ||
+                    secondBottom >= firstTop && secondBottom <= firstBottom)
+                {
+                    horizontalMatch = true;
+                }
+            }
+            else
+            {
+                if (firstTop >= secondTop && firstTop <= secondBottom ||
+                    firstBottom >= secondTop && firstBottom <= secondBottom)
+                {
+                    horizontalMatch = true;
+                }
+            }
+            bool verticalMatch = false;
+            if (firstWidth >= secondWidth)
+            {
+                if (secondLeft >= firstLeft && secondLeft <= firstRight ||
+                    secondRight >= firstLeft && secondRight <= firstRight)
+                {
+                    verticalMatch = true;
+                }
+            }
+            else
+            {
+                if (firstLeft >= secondLeft && firstLeft <= secondRight ||
+                    firstRight >= secondLeft && firstRight <= secondRight)
+                {
+                    verticalMatch = true;
+                }
             }
 
-            int firstStartRow = first.TopLeft.Row - overlapSize;
-            int firstStartCol = first.TopLeft.Col - overlapSize;
-            int firstEndRow = first.TopLeft.Row + first.GetImage().GetLength(0) + overlapSize;
-            int firstEndCol = first.TopLeft.Col + first.GetImage().GetLength(1) + overlapSize;
+            bool right = (firstRight == secondLeft) && horizontalMatch;
+            bool left = (firstLeft == secondRight) && horizontalMatch;
+            bool top = (firstTop == secondBottom) && verticalMatch;
+            bool bottom = (firstBottom == secondTop) && verticalMatch;
 
-            int secondStartRow = second.TopLeft.Row;
-            int secondStartCol = second.TopLeft.Col;
-            int secondEndRow = second.TopLeft.Row + second.GetImage().GetLength(0);
-            int secondEndCol = second.TopLeft.Col + second.GetImage().GetLength(1);
-
-            bool topLeft = secondStartRow >= firstStartRow && secondStartRow <= firstEndRow &&
-                           secondStartCol >= firstStartCol && secondStartCol <= firstEndCol;
-            bool topRight = secondStartRow >= firstStartRow && secondStartRow <= firstEndRow &&
-                            secondEndCol >= firstStartCol && secondEndCol <= firstEndCol;
-            bool bottomLeft = secondEndRow >= firstStartRow && secondEndRow <= firstEndRow &&
-                              secondStartCol >= firstStartCol && secondStartCol <= firstEndCol;
-            bool bottomRight = secondEndRow >= firstStartRow && secondEndRow <= firstEndRow &&
-                               secondEndCol >= firstStartCol && secondEndCol <= firstEndCol;
-            return (topLeft || topRight || bottomLeft || bottomRight);
+            switch (direction)
+            {
+                case DirectionType.Bottom: return bottom;
+                case DirectionType.Left: return left;
+                case DirectionType.Rigth: return right;
+                case DirectionType.Top: return top;
+                case DirectionType.All: return bottom || left || right || top;
+                default: return false;
+            }
         }
-        
     }
 }

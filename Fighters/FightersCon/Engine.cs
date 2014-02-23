@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FightersCon.StaticObjects;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -133,7 +134,7 @@ namespace FightersCon
                 char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
                                        {' ', 'H', 'E','R', 'O', ' '}};
                                
-                this.AddObject(new FightersCon.StaticObjects.Tree(new MatrixCoords(25, 40)));
+                this.AddObject(new Tree(new MatrixCoords(25, 40)));
                 this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
                 this.AddObject(new SuperHero(new MatrixCoords(25, 50), new MatrixCoords(0, 0), 0, 0));
                 this.AddObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
