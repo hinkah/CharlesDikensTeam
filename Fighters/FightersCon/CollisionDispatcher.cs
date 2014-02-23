@@ -35,7 +35,7 @@ namespace FightersCon
             {
                 if (IsCollision(superHero, movingObject, true))
                 {
-                    //movingObject.IsDestroyed = true;
+                    movingObject.IsDestroyed = true;
                 }
             }
 

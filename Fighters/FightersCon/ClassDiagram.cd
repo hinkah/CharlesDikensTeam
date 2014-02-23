@@ -10,7 +10,7 @@
   <Class Name="FightersCon.CollisionDispatcher" Collapsed="true">
     <Position X="19" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAIAAACAAAAAAAAAACAAAABAAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CollisionDispatcher.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -25,7 +25,7 @@
   <Class Name="FightersCon.Engine" Collapsed="true">
     <Position X="17.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAFAAAAEAAAAAAAAAAAAABggAAAAAAAAAAACAgAI=</HashCode>
+      <HashCode>AAAAAFAAAAUAAAAAAAAAAAAABigAAAAAAAAAAACAgAM=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -61,21 +61,21 @@
   <Class Name="FightersCon.SuperHero" Collapsed="true">
     <Position X="14.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAg=</HashCode>
+      <HashCode>AAAAAAAAABQABAAAAAAAAAAAAAAAAAEAAAAAAAAAYAk=</HashCode>
       <FileName>MovableObjects\SuperHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Turtle" Collapsed="true">
     <Position X="10.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQgAQAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQgAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableObjects\Turtle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Wolf" Collapsed="true">
     <Position X="12.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>MovableObjects\Wolf.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -111,7 +111,7 @@
   <Class Name="FightersCon.WorldObject" Collapsed="true">
     <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BASAAAAAAIAAAhAQAAAAABAQAQAAAAQAAIAAgAGBEAA=</HashCode>
+      <HashCode>AAQAAAAAAIAAAhAQAAAAAAAQAQAAAAAAAIAAgAEBEAA=</HashCode>
       <FileName>WorldObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -126,7 +126,7 @@
   <Class Name="FightersCon.StaticObjects.Fence" Collapsed="true">
     <Position X="3.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StaticObjects\Fence.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -140,14 +140,14 @@
   <Class Name="FightersCon.StaticObjects.Tree" Collapsed="true">
     <Position X="1.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StaticObjects\Tree.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="FightersCon.MatrixCoords" Collapsed="true">
     <Position X="17.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAwAEAAAAAAAEAAoAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAA4AEAAAAAAAEAAoAAAAAAAAAAAAA=</HashCode>
       <FileName>MatrixCoords.cs</FileName>
     </TypeIdentifier>
   </Struct>
@@ -196,7 +196,7 @@
   <Interface Name="FightersCon.IUserInterface" Collapsed="true">
     <Position X="17.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAQAEAAEAAAAAAgAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IUserInterface.cs</FileName>
     </TypeIdentifier>
   </Interface>

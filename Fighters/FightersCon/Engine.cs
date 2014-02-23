@@ -85,55 +85,67 @@ namespace FightersCon
 
         public virtual void Run(int sleepTime) // the engine of the game - this is where the starts.
         {
+            int intttt = 1;
             while (true)
             {
-                List<WorldObject> newObjects = StartGame.RuntimeCreatedObjects();
+                FillTheMap(intttt);
 
-                foreach (var gameObject in newObjects)
+                while (true)
                 {
-                    this.AddObject(gameObject); // we add newly created objects to the list of objects.
-                }
+                    List<WorldObject> newObjects = StartGame.RuntimeCreatedObjects();
 
-                this.renderer.RenderAll(); // prints all objects on the console.
-
-                System.Threading.Thread.Sleep(sleepTime); // delays the game so we coul play at a normal speed.
-                foreach (var hero in this.allObjects)
-                {
-                    if (hero is SuperHero)
+                    foreach (var gameObject in newObjects)
                     {
-                        this.userInterface.ProcessInput(hero); // checkes if a key is pressed and if so, it executes its function.
+                        this.AddObject(gameObject); // we add newly created objects to the list of objects.
+                    }
+
+                    this.renderer.RenderAll(); // prints all objects on the console.
+
+                    System.Threading.Thread.Sleep(sleepTime); // delays the game so we coul play at a normal speed.
+                    foreach (var hero in this.allObjects)
+                    {
+                        if (hero is SuperHero)
+                        {
+                            this.userInterface.ProcessInput(hero); // checkes if a key is pressed and if so, it executes its function.
+                            break;
+                        }
+                    }
+
+                    CheckMovingBoundarys();
+
+                    this.renderer.ClearQueue(); // we clean the string which is printed on the whole console.
+
+                    foreach (var obj in this.allObjects)
+                    {
+                        obj.Update(); // we update all rellevant parameters for the specific objects.
+                        this.renderer.EnqueueForRendering(obj); // the updated parameters are now added to the string containing all objects that are printed on theconsole at each iteration.
+                    }
+
+                    CollisionDispatcher.HandleCollisions(this.movingObjects, this.staticObjects); // we check all collisions that have occured and we process them.
+
+                    List<WorldObject> producedObjects = new List<WorldObject>();
+
+                    foreach (var obj in this.allObjects)
+                    {
+                        producedObjects.AddRange(obj.ProduceObjects()); // we add the newly created objects to the list of objects
+                    }
+
+                    this.allObjects.RemoveAll(obj => obj.IsDestroyed); // we check whether all objects have been deleted and the ones that have not been deleted are rempoved from the existing objects list. 
+                    this.movingObjects.RemoveAll(obj => obj.IsDestroyed); // the same
+                    this.staticObjects.RemoveAll(obj => obj.IsDestroyed); // the same
+
+                    foreach (var obj in producedObjects)
+                    {
+                        this.AddObject(obj); // we send the newly created objects to the respective class.
+                    }
+                    if (this.movingObjects.Count == 1)
+                    {
+                        intttt = 2;
                         break;
                     }
                 }
-
-                CheckMovingBoundarys();
-
-                this.renderer.ClearQueue(); // we clean the string which is printed on the whole console.
-
-                foreach (var obj in this.allObjects)
-                {
-                    obj.Update(); // we update all rellevant parameters for the specific objects.
-                    this.renderer.EnqueueForRendering(obj); // the updated parameters are now added to the string containing all objects that are printed on theconsole at each iteration.
-                }
-
-                CollisionDispatcher.HandleCollisions(this.movingObjects, this.staticObjects); // we check all collisions that have occured and we process them.
-
-                List<WorldObject> producedObjects = new List<WorldObject>();
-
-                foreach (var obj in this.allObjects)
-                {
-                    producedObjects.AddRange(obj.ProduceObjects()); // we add the newly created objects to the list of objects
-                }
-
-                this.allObjects.RemoveAll(obj => obj.IsDestroyed); // we check whether all objects have been deleted and the ones that have not been deleted are rempoved from the existing objects list. 
-                this.movingObjects.RemoveAll(obj => obj.IsDestroyed); // the same
-                this.staticObjects.RemoveAll(obj => obj.IsDestroyed); // the same
-
-                foreach (var obj in producedObjects)
-                {
-                    this.AddObject(obj); // we send the newly created objects to the respective class.
-                }
             }
+            
         }
         private void CheckMovingBoundarys()
         {
@@ -160,8 +172,69 @@ namespace FightersCon
                 }          
             }
         }
+        public void FillTheMap(int i)
+        {
+            if (i == 1)
+            {
+                char[,] shit = new char[,] {{'(', '\\', '_', '_','_',  '/', ')'},
+                                       {'(', '=', '\'', '.', '\'', '=', ')'},
+                                       {'(', '"', ')', '_', '(', '"', ')'}};
 
 
+                char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
+                                       {' ', 'H', 'E','R', 'O', ' '}};
+                char[,] shit3 = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
+                                         {' ', 'C', ' ','o', 'o', ' '},
+                                         {' ', '_', '(',' ', '^', ')'},
+                                         {'/', ' ', ' ',' ', '~', '\\'}};
+
+
+                this.AddMovingObject(new Rabbit(new MatrixCoords(0, 20), shit, new MatrixCoords(1, 0)));
+                this.AddMovingObject(new SuperHero(new MatrixCoords(10, 26), shit3, new MatrixCoords(0, 0), 0, 0));
+                this.AddMovingObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
+            }
+            else if (i == 2)
+            {
+                char[,] shit = new char[,] {{'(', '\\', '_', '_','_',  '/', ')'},
+                                       {'(', '=', '\'', '.', '\'', '=', ')'},
+                                       {'(', '"', ')', '_', '(', '"', ')'}};
+
+
+                char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
+                                       {' ', 'H', 'E','R', 'O', ' '}};
+                char[,] shit3 = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
+                                         {' ', 'C', ' ','o', 'o', ' '},
+                                         {' ', '_', '(',' ', '^', ')'},
+                                         {'/', ' ', ' ',' ', '~', '\\'}};
+
+
+                this.AddMovingObject(new Rabbit(new MatrixCoords(0, 20), shit, new MatrixCoords(1, 0)));
+                //this.AddMovingObject(new SuperHero(new MatrixCoords(10, 26), shit3, new MatrixCoords(0, 0), 0, 0));
+                this.AddMovingObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
+            }
+            
+            //this.Run(100);
+        }
+        //public void FillTheMapc2()
+        //{
+        //    char[,] shit = new char[,] {{'(', '\\', '_', '_','_',  '/', ')'},
+        //                               {'(', '=', '\'', '.', '\'', '=', ')'},
+        //                               {'(', '"', ')', '_', '(', '"', ')'}};
+
+
+        //    char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
+        //                               {' ', 'H', 'E','R', 'O', ' '}};
+        //    char[,] shit3 = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
+        //                                 {' ', 'C', ' ','o', 'o', ' '},
+        //                                 {' ', '_', '(',' ', '^', ')'},
+        //                                 {'/', ' ', ' ',' ', '~', '\\'}};
+
+
+        //    this.AddMovingObject(new Rabbit(new MatrixCoords(0, 20), shit, new MatrixCoords(1, 0)));
+        //    this.AddMovingObject(new SuperHero(new MatrixCoords(10, 26), shit3, new MatrixCoords(0, 0), 0, 0));
+        //    this.AddMovingObject(new Turtle(new MatrixCoords(25, 10), shit3, new MatrixCoords(0, -1)));
+        //    this.Run(100);
+        //}
     }
    
 }
