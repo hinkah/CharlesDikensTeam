@@ -9,29 +9,7 @@ namespace FightersCon
     
 
     public class Program
-    {
-        public static void MovingBoundarys(MovableObject obj)
-        {
-            if (obj is SuperHero == false)
-            {
-                if (obj.TopLeft.Col == 0)
-                {
-                    obj.Speed = new MatrixCoords(0, 1);
-                }
-                if (obj.TopLeft.Col == 94)
-                {
-                    obj.Speed = new MatrixCoords(0, -1);
-                }
-                if (obj.TopLeft.Row == 0)
-                {
-                    obj.Speed = new MatrixCoords(1, 0);
-                }
-                if (obj.TopLeft.Row == 28)
-                {
-                    obj.Speed = new MatrixCoords(-1, 0);
-                }
-            }            
-        }
+    {        
         static void Main(string[] args)
         {
             //ss
@@ -41,7 +19,7 @@ namespace FightersCon
             
             
             char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
-                                       {'R', 'A', 'B','B', 'I', 'T'}};
+                                       {' ', 'H', 'E','R', 'O', ' '}};
             char[,] shit3 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
                                        {'T', 'U', 'R','T', 'L', 'E'}};
                                        

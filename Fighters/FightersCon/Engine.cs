@@ -106,10 +106,8 @@ namespace FightersCon
                     }
                 }
 
-                foreach (var obj in this.movingObjects)
-                {
-                    Program.MovingBoundarys(obj);
-                }
+                CheckMovingBoundarys();
+
                 this.renderer.ClearQueue(); // we clean the string which is printed on the whole console.
 
                 foreach (var obj in this.allObjects)
@@ -135,6 +133,31 @@ namespace FightersCon
                 {
                     this.AddObject(obj); // we send the newly created objects to the respective class.
                 }
+            }
+        }
+        private void CheckMovingBoundarys()
+        {
+            foreach (var obj in this.movingObjects)
+            {
+                if (obj is SuperHero == false)
+                {
+                    if (obj.TopLeft.Col == 0)
+                    {
+                        obj.Speed = new MatrixCoords(0, 1);
+                    }
+                    if (obj.TopLeft.Col == 94)
+                    {
+                        obj.Speed = new MatrixCoords(0, -1);
+                    }
+                    if (obj.TopLeft.Row == 0)
+                    {
+                        obj.Speed = new MatrixCoords(1, 0);
+                    }
+                    if (obj.TopLeft.Row == 28)
+                    {
+                        obj.Speed = new MatrixCoords(-1, 0);
+                    }
+                }          
             }
         }
 

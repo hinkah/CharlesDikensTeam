@@ -20,7 +20,10 @@ namespace FightersCon
         {
             return new MatrixCoords(a.Row + b.Row, a.Col + b.Col);
         }
-
+        public static MatrixCoords operator *(MatrixCoords a, int b)
+        {
+            return new MatrixCoords(a.Row * b, a.Col * b);
+        }
 
         // this method extracts the coordinates (x - x, y - y) of the respective object.
         public static MatrixCoords operator -(MatrixCoords a, MatrixCoords b) 
