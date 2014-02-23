@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace FightersCon
 {
-    
-
     public class Program
     {        
         static void Main(string[] args)
