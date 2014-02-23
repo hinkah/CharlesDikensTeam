@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="FightersCon.CollisionData" Collapsed="true">
-    <Position X="18.75" Y="0.5" Width="1.5" />
+    <Position X="23.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CollisionData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.CollisionDispatcher" Collapsed="true">
-    <Position X="20.5" Y="0.5" Width="1.5" />
+    <Position X="25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CollisionDispatcher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.ConsoleRenderer" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="22.25" Y="0.5" Width="1.5" />
+    <Position X="26.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gEAAAAAAAAAAAAAAABAAAAIAAAAAAAAQACAAAAQAAAA=</HashCode>
       <FileName>ConsoleRenderer.cs</FileName>
@@ -23,14 +23,14 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="FightersCon.Engine" Collapsed="true">
-    <Position X="18.75" Y="1.5" Width="1.5" />
+    <Position X="23.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAFAAAAUAAAAAAAAAAAAABggAAAAAAAAAAACAgAI=</HashCode>
+      <HashCode>AAAAAFAAAAUAAAAAAAAAAAAABigAAAAAAAAAAACAgAI=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.KeyboardInterface" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="22.25" Y="1.5" Width="1.5" />
+    <Position X="23.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>KeyboardInterface.cs</FileName>
@@ -38,64 +38,64 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="FightersCon.Animal">
-    <Position X="9.5" Y="8.25" Width="1.5" />
+    <Position X="9.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableObjects\Animal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Character">
-    <Position X="15" Y="8.25" Width="1.5" />
+    <Position X="17.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableObjects\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Rabbit">
-    <Position X="7.25" Y="10.75" Width="1.5" />
+    <Position X="11.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAAAAASA=</HashCode>
       <FileName>MovableObjects\Rabbit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.SuperHero">
-    <Position X="16.25" Y="10.25" Width="1.5" />
+    <Position X="16.25" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABQABAAAAAAAAAAAAAAAAAEAAAAAAAAAYAk=</HashCode>
       <FileName>MovableObjects\SuperHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Turtle">
-    <Position X="9.5" Y="10.75" Width="1.5" />
+    <Position X="7.25" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAQgAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableObjects\Turtle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Wolf">
-    <Position X="11.75" Y="10.75" Width="1.5" />
+    <Position X="9.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>MovableObjects\Wolf.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.MovableObject">
-    <Position X="11.75" Y="5" Width="1.5" />
+    <Position X="14" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAQAAAAAAAAAACAAAAAACAABAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MovableObjects.cs</FileName>
+      <HashCode>CAQAAAAAAAAAACAAAAAACAABAAAAAAAAAAAACAgAAAA=</HashCode>
+      <FileName>MovableObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="FightersCon.Program" Collapsed="true">
-    <Position X="18.75" Y="2.5" Width="1.5" />
+    <Position X="25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.StartGame" Collapsed="true">
-    <Position X="20.5" Y="2.5" Width="1.5" />
+    <Position X="26.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StartGame.cs</FileName>
@@ -109,7 +109,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.WorldObject">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAIAAAhAQAAAAAAAQAQAAAAAAAIAAAAEBEAA=</HashCode>
       <FileName>WorldObject.cs</FileName>
@@ -117,7 +117,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Init" Collapsed="true">
-    <Position X="20.5" Y="1.5" Width="1.5" />
+    <Position X="25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ICACAAAAEFQAAAAAQEAECAEAAAIAAAFCYAAAAJAEAAA=</HashCode>
       <FileName>Init.cs</FileName>
@@ -145,84 +145,105 @@
     </TypeIdentifier>
   </Class>
   <Class Name="FightersCon.Warrior">
-    <Position X="14" Y="10.25" Width="1.5" />
+    <Position X="14" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAABAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="FightersCon.InvalidPowerValueException" Collapsed="true">
+    <Position X="26.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InvalidPowerValueException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FightersCon.Trader">
+    <Position X="20.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABBAAAAAAAAAAIAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>MovableObjects\Trader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FightersCon.Villager">
+    <Position X="18.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>MovableObjects\Villager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="FightersCon.MatrixCoords" Collapsed="true">
-    <Position X="18.75" Y="3.75" Width="1.5" />
+    <Position X="23.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAA4AEAAAAAAAEAAoAAAAAAAAAAAAA=</HashCode>
       <FileName>MatrixCoords.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="FightersCon.ICollidable" Collapsed="true">
-    <Position X="18.75" Y="5" Width="1.5" />
+    <Position X="23.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>ICollidable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IControllable" Collapsed="true">
-    <Position X="20.5" Y="5" Width="1.5" />
+    <Position X="25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IControllable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IMovable" Collapsed="true">
-    <Position X="22.25" Y="5" Width="1.5" />
+    <Position X="26.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IMoveble.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IObjectProducer" Collapsed="true">
-    <Position X="18.75" Y="5.75" Width="1.5" />
+    <Position X="23.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>IObjectProducer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IRenderable" Collapsed="true">
-    <Position X="20.5" Y="5.75" Width="1.5" />
+    <Position X="25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>IRenderable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IRenderer" Collapsed="true">
-    <Position X="22.25" Y="5.75" Width="1.5" />
+    <Position X="26.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>IRenderer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IUserInterface" Collapsed="true">
-    <Position X="18.75" Y="6.5" Width="1.5" />
+    <Position X="23.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IUserInterface.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FightersCon.IWorldObject" Collapsed="true">
-    <Position X="20.5" Y="6.5" Width="1.5" />
+    <Position X="25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>IWorldObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="FightersCon.AnimalType" Collapsed="true">
-    <Position X="18.75" Y="7.5" Width="1.5" />
+    <Position X="23.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AnimalType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="FightersCon.BonusType" Collapsed="true">
-    <Position X="20.5" Y="7.5" Width="1.5" />
+    <Position X="25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgABAAE=</HashCode>
       <FileName>BonusType.cs</FileName>
