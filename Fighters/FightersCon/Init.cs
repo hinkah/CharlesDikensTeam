@@ -39,7 +39,7 @@ public static class Init
     
     //static objects
     public const int StaticLife=20; //for static destroyable objects ok
-    
+    // FenceLife = 20;
     
 
 
