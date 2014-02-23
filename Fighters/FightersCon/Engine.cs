@@ -105,8 +105,11 @@ namespace FightersCon
                         break;
                     }
                 }
-                
 
+                foreach (var obj in this.movingObjects)
+                {
+                    Program.MovingBoundarys(obj);
+                }
                 this.renderer.ClearQueue(); // we clean the string which is printed on the whole console.
 
                 foreach (var obj in this.allObjects)

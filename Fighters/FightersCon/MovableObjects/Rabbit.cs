@@ -3,7 +3,7 @@ namespace FightersCon
 {
     public class Rabbit : Animal
     {
-        private const int RabbitLife = 100;         //Init.AnimalLife;
+        //private const int RabbitLife = 100;         //Init.AnimalLife;
         private const int RabbitAttackPower = 0;
         private const int RabbitDefencePower = 0;
         private const int RabbitLife = Init.AnimalLife;

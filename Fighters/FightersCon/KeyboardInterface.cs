@@ -10,23 +10,39 @@ namespace FightersCon
             var keyInfo = Console.ReadKey();
             if (keyInfo.Key.Equals(ConsoleKey.LeftArrow))
             {
-                hero.TopLeft = hero.TopLeft + new MatrixCoords(0, -2);
+                if (hero.TopLeft.Col > 0)
+                {
+                    hero.TopLeft = hero.TopLeft + new MatrixCoords(0, -2);
+                }
+                
             }
             else if (keyInfo.Key.Equals(ConsoleKey.RightArrow))
             {
-                hero.TopLeft = hero.TopLeft + new MatrixCoords(0, 2);
+                if (hero.TopLeft.Col < 94)
+                {
+                    hero.TopLeft = hero.TopLeft + new MatrixCoords(0, 2);
+                }
+                
             }
             else if (keyInfo.Key.Equals(ConsoleKey.UpArrow))
             {
-                hero.TopLeft = hero.TopLeft + new MatrixCoords(-1, 0);
+                if (hero.TopLeft.Row > 0)
+                {
+                    hero.TopLeft = hero.TopLeft + new MatrixCoords(-1, 0);
+                }
+                
             }
             else if (keyInfo.Key.Equals(ConsoleKey.DownArrow))
             {
-                hero.TopLeft = hero.TopLeft + new MatrixCoords(1, 0);
+                if (hero.TopLeft.Row < 28)
+                {
+                    hero.TopLeft = hero.TopLeft + new MatrixCoords(1, 0);
+                }
+                
             }
             else if (keyInfo.Key.Equals(ConsoleKey.Spacebar)) // shooting
             {
-
+                
             }
             while (Console.KeyAvailable)
             {
