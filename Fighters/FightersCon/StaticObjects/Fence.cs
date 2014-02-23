@@ -4,7 +4,7 @@ namespace FightersCon.StaticObjects
 {
     public class Fence : StaticObject
     {
-        public const int FenceLife;
+        public const int FenceLife = 20;
 
         public Fence(MatrixCoords topLeft, char[,] body)
             : base(topLeft, body)
