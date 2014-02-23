@@ -19,7 +19,7 @@ namespace FightersCon
             this.Life = WolfLife;
             this.AttackPower = WolfAttackPower;
             this.Bonus = WolfBonus;
-
+            
         }
     }
 }

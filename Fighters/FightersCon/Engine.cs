@@ -29,7 +29,7 @@ namespace FightersCon
             this.allObjects.Add(obj);
         }
 
-        private void AddMovingObject(MovableObject obj) // addition of a moving object to the above-mentioned objects.
+        public void AddMovingObject(MovableObject obj) // addition of a moving object to the above-mentioned objects.
         {
             this.movingObjects.Add(obj);
             this.allObjects.Add(obj);
@@ -97,8 +97,15 @@ namespace FightersCon
                 this.renderer.RenderAll(); // prints all objects on the console.
 
                 System.Threading.Thread.Sleep(sleepTime); // delays the game so we coul play at a normal speed.
-
-                this.userInterface.ProcessInput(); // checkes if a key is pressed and if so, it executes its function.
+                foreach (var hero in this.allObjects)
+                {
+                    if (hero is SuperHero)
+                    {
+                        this.userInterface.ProcessInput(hero); // checkes if a key is pressed and if so, it executes its function.
+                        break;
+                    }
+                }
+                
 
                 this.renderer.ClearQueue(); // we clean the string which is printed on the whole console.
 

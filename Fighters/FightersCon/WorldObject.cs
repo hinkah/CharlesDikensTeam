@@ -8,13 +8,13 @@ namespace FightersCon
         public const string CollisionGroupString = "object"; // all objects inherit this class called WorldObject.
         public const int InitialLife = 100;
 
-        private MatrixCoords topLeft;                     
-        private char[,] body;
+        private MatrixCoords topLeft;
+        protected char[,] body;
 
         protected WorldObject(MatrixCoords topLeft, char[,] body) 
         {
             this.TopLeft = topLeft;
-            this.body = this.CopyBodyMatrix(body);
+            this.body = body;
             this.IsDestroyed = false;
             this.Life = InitialLife;
         }
@@ -30,7 +30,7 @@ namespace FightersCon
                 return new MatrixCoords(topLeft.Row, topLeft.Col); // returns the coordinates of the top left point of the object when required.
             }
 
-            protected set
+            set// protected set
             {
                 this.topLeft = new MatrixCoords(value.Row, value.Col); // through the coordinates we move the object to the desired place.
             }
