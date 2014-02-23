@@ -214,7 +214,7 @@
       <FileName>AnimalType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="FightersCon.BonusType" Collapsed="true">
+  <Enum Name="FightersCon.BonusType">
     <Position X="19" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgABAAE=</HashCode>

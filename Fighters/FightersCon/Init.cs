@@ -15,6 +15,7 @@ public static class Init
 
     public static int WhootPower=10;
 
+    //WorldObject.InitialLife = 100;
     //hero
     public const int SuperHeroLife = 1000;
     public const int SuperHeroAttack = 300;
@@ -38,7 +39,7 @@ public static class Init
     
     //static objects
     public const int StaticLife=20; //for static destroyable objects ok
-    
+    // FenceLife = 20;
     
 
 
