@@ -8,6 +8,6 @@ namespace FightersCon
 {
     public interface IUserInterface
     {
-        void ProcessInput(WorldObject hero);
+        void ProcessInput(WorldObject hero, List<WorldObject> otherObjects);
     }
 }

@@ -91,7 +91,7 @@ namespace FightersCon
             }
         }
 
-        private static bool IsCollision(WorldObject first, WorldObject second, bool overlap)
+        public static bool IsCollision(WorldObject first, WorldObject second, bool overlap)
         {
             int overlapSize = 0;
             if (overlap)
@@ -109,15 +109,16 @@ namespace FightersCon
             int secondEndRow = second.TopLeft.Row + second.GetImage().GetLength(0);
             int secondEndCol = second.TopLeft.Col + second.GetImage().GetLength(1);
 
-            bool topLeft = secondStartRow > firstStartRow && secondStartRow < firstEndRow &&
-                           secondStartCol > firstStartCol && secondStartCol < firstEndCol;
-            bool topRight = secondStartRow > firstStartRow && secondStartRow < firstEndRow &&
-                            secondEndCol > firstStartCol && secondEndCol < firstEndCol;
-            bool bottomLeft = secondEndRow > firstStartRow && secondEndRow < firstEndRow &&
-                              secondStartCol > firstStartCol && secondStartCol < firstEndCol;
-            bool bottomRight = secondEndRow > firstStartRow && secondEndRow < firstEndRow &&
-                               secondEndCol > firstStartCol && secondEndCol < firstEndCol;
+            bool topLeft = secondStartRow >= firstStartRow && secondStartRow <= firstEndRow &&
+                           secondStartCol >= firstStartCol && secondStartCol <= firstEndCol;
+            bool topRight = secondStartRow >= firstStartRow && secondStartRow <= firstEndRow &&
+                            secondEndCol >= firstStartCol && secondEndCol <= firstEndCol;
+            bool bottomLeft = secondEndRow >= firstStartRow && secondEndRow <= firstEndRow &&
+                              secondStartCol >= firstStartCol && secondStartCol <= firstEndCol;
+            bool bottomRight = secondEndRow >= firstStartRow && secondEndRow <= firstEndRow &&
+                               secondEndCol >= firstStartCol && secondEndCol <= firstEndCol;
             return (topLeft || topRight || bottomLeft || bottomRight);
         }
+        
     }
 }

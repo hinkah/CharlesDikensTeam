@@ -60,7 +60,7 @@ namespace FightersCon
                     {
                         if (hero is SuperHero)
                         {
-                            this.userInterface.ProcessInput(hero); // checkes if a key is pressed and if so, it executes its function.
+                            this.userInterface.ProcessInput(hero, allObjects); // checkes if a key is pressed and if so, it executes its function.
                             break;
                         }
                     }
@@ -135,7 +135,7 @@ namespace FightersCon
                                
                 this.AddObject(new FightersCon.StaticObjects.Tree(new MatrixCoords(25, 40)));
                 this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
-                this.AddObject(new SuperHero(new MatrixCoords(10, 30), new MatrixCoords(0, 0), 0, 0));
+                this.AddObject(new SuperHero(new MatrixCoords(25, 50), new MatrixCoords(0, 0), 0, 0));
                 this.AddObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
             }
             else if (i == 2)
