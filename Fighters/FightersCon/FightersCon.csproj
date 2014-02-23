@@ -72,6 +72,7 @@
     <Compile Include="StaticObjects\Fence.cs" />
     <Compile Include="StaticObjects\House.cs" />
     <Compile Include="StaticObjects\Tree.cs" />
+    <Compile Include="Warrior.cs" />
     <Compile Include="WorldObject.cs" />
   </ItemGroup>
   <ItemGroup>
