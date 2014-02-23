@@ -4,8 +4,13 @@ namespace FightersCon.StaticObjects
 {
     public class Tree : StaticObject
     {
-        public Tree(MatrixCoords topLeft, char[,] body)
-            : base(topLeft, body)
+        public static char[,] treeBody = new char[,] {{' ', '(', '~', '~', ')', ' '},
+                                                  {'(', '~', '~', '~', '~', ')'},
+                                                  {' ', '(', '~', '~', ')', ' '},
+                                                  {' ', ' ', '|', '|', ' ', ' '},
+                                                  {' ', '_', '|', '|', '_',' '}};
+        public Tree(MatrixCoords topLeft)
+            : base(topLeft, treeBody)
         {
             IsDestroyable = false;
             this.Life = int.MaxValue;

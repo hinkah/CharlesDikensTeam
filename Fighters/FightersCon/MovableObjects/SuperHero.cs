@@ -9,9 +9,13 @@ namespace FightersCon
         public const int SuperHeroShoot = 10;
         public const int SuperHeroGold = 100;
         public const int SuperHeroExperience = 1;
+        public static char[,] heroBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
+                                                   {' ', 'C', ' ','o', 'o', ' '},
+                                                   {' ', '_', '(',' ', '^', ')'},
+                                                   {'/', ' ', ' ',' ', '~', '\\'}}; 
 
-        public SuperHero(MatrixCoords topLeft, char[,] body, MatrixCoords speed,int attackPower, int defencePower)
-            : base(topLeft, body, speed, SuperHeroAttackPower, SuperHeroDefencePower)
+        public SuperHero(MatrixCoords topLeft, MatrixCoords speed,int attackPower, int defencePower)
+            : base(topLeft, heroBody, speed, SuperHeroAttackPower, SuperHeroDefencePower)
         {
             this.Life = SuperHeroLife;
             this.Gold = SuperHeroGold;

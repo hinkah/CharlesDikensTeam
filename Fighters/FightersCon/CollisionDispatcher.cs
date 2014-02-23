@@ -29,13 +29,21 @@ namespace FightersCon
                 index++;
             }
 
-            SuperHero superHero = (SuperHero)movingObjects[superHeroIndex];
+            SuperHero superHero = movingObjects[superHeroIndex] as SuperHero;
 
             foreach (var movingObject in movingObjectWithoutHero)
             {
                 if (IsCollision(superHero, movingObject, true))
                 {
-                    movingObject.IsDestroyed = true;
+                    if (superHero.Life < movingObject.AttackPower)
+                    {
+                        throw new ArgumentException("Hero is dead!");
+                    }
+                    else
+                    {
+                        movingObject.IsDestroyed = true;
+                    }
+                    
                 }
             }
 

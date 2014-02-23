@@ -23,64 +23,18 @@ namespace FightersCon
             this.staticObjects = new List<StaticObject>();
         }
 
-        private void AddStaticObject(StaticObject obj) // addition of a static object to the above-mentioned objects.
-        {
-            this.staticObjects.Add(obj);
-            this.allObjects.Add(obj);
-        }
-
-        public void AddMovingObject(MovableObject obj) // addition of a moving object to the above-mentioned objects.
-        {
-            this.movingObjects.Add(obj);
-            this.allObjects.Add(obj);
-        }
-
         public virtual void AddObject(WorldObject obj) // we check whether this is a static, a moving object or our ship and we add it to the respective list of objects (containers).
         {
-            //if (obj is Ship)
-            //{
-            //    AddShip(obj);
-            //}
-        //    else if (obj is MovableObject)
-        //    {
-        //        this.AddMovingObject(obj as MovableObject);
-        //    }
-        //    else
-        //    {
-        //        this.AddStaticObject(obj);
-
-        //    }
-        //}
-
-        //private void AddShip(GameObject obj) // addig the ship to the list of objects.
-        //{
-        //    this._playerShip = obj as Ship;
-        //    this.AddStaticObject(obj);
-        //}
-
-        //public virtual void MovePlayerShipLeft() // moving the ship to the left
-        //{
-        //    this._playerShip.MoveLeft();
-        //}
-
-        //public virtual void MovePlayerShipRight() // moving the ship to the right
-        //{
-        //    this._playerShip.MoveRight();
-        //}
-
-        //public virtual void MovePlayerShipDown() // moving the ship downwards
-        //{
-        //    this._playerShip.MoveDown();
-        //}
-
-        //public virtual void MovePlayerShipUp() // moving the ship upwards
-        //{
-        //    this._playerShip.MoveUp();
-        //}
-
-        //public virtual void PlayerShipAction(Engine gameEngine) // shooting in stead of movement (movement of the object).
-        //{
-        //    this._playerShip.Shoot(gameEngine);
+            if (obj is MovableObject)
+            {
+                this.movingObjects.Add((MovableObject)obj);
+                this.allObjects.Add(obj);
+            }
+            else
+            {
+                this.staticObjects.Add((StaticObject)obj);
+                this.allObjects.Add(obj);                
+            }
         }
 
         public virtual void Run(int sleepTime) // the engine of the game - this is where the starts.
@@ -176,65 +130,22 @@ namespace FightersCon
         {
             if (i == 1)
             {
-                char[,] shit = new char[,] {{'(', '\\', '_', '_','_',  '/', ')'},
-                                       {'(', '=', '\'', '.', '\'', '=', ')'},
-                                       {'(', '"', ')', '_', '(', '"', ')'}};
-
-
                 char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
                                        {' ', 'H', 'E','R', 'O', ' '}};
-                char[,] shit3 = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
-                                         {' ', 'C', ' ','o', 'o', ' '},
-                                         {' ', '_', '(',' ', '^', ')'},
-                                         {'/', ' ', ' ',' ', '~', '\\'}};
-
-
-                this.AddMovingObject(new Rabbit(new MatrixCoords(0, 20), shit, new MatrixCoords(1, 0)));
-                this.AddMovingObject(new SuperHero(new MatrixCoords(10, 26), shit3, new MatrixCoords(0, 0), 0, 0));
-                this.AddMovingObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
+                               
+                this.AddObject(new FightersCon.StaticObjects.Tree(new MatrixCoords(25, 40)));
+                this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
+                this.AddObject(new SuperHero(new MatrixCoords(10, 30), new MatrixCoords(0, 0), 0, 0));
+                this.AddObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
             }
             else if (i == 2)
             {
-                char[,] shit = new char[,] {{'(', '\\', '_', '_','_',  '/', ')'},
-                                       {'(', '=', '\'', '.', '\'', '=', ')'},
-                                       {'(', '"', ')', '_', '(', '"', ')'}};
-
-
                 char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
                                        {' ', 'H', 'E','R', 'O', ' '}};
-                char[,] shit3 = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
-                                         {' ', 'C', ' ','o', 'o', ' '},
-                                         {' ', '_', '(',' ', '^', ')'},
-                                         {'/', ' ', ' ',' ', '~', '\\'}};
-
-
-                this.AddMovingObject(new Rabbit(new MatrixCoords(0, 20), shit, new MatrixCoords(1, 0)));
-                //this.AddMovingObject(new SuperHero(new MatrixCoords(10, 26), shit3, new MatrixCoords(0, 0), 0, 0));
-                this.AddMovingObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
+                this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
+                this.AddObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
             }
-            
-            //this.Run(100);
         }
-        //public void FillTheMapc2()
-        //{
-        //    char[,] shit = new char[,] {{'(', '\\', '_', '_','_',  '/', ')'},
-        //                               {'(', '=', '\'', '.', '\'', '=', ')'},
-        //                               {'(', '"', ')', '_', '(', '"', ')'}};
-
-
-        //    char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
-        //                               {' ', 'H', 'E','R', 'O', ' '}};
-        //    char[,] shit3 = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
-        //                                 {' ', 'C', ' ','o', 'o', ' '},
-        //                                 {' ', '_', '(',' ', '^', ')'},
-        //                                 {'/', ' ', ' ',' ', '~', '\\'}};
-
-
-        //    this.AddMovingObject(new Rabbit(new MatrixCoords(0, 20), shit, new MatrixCoords(1, 0)));
-        //    this.AddMovingObject(new SuperHero(new MatrixCoords(10, 26), shit3, new MatrixCoords(0, 0), 0, 0));
-        //    this.AddMovingObject(new Turtle(new MatrixCoords(25, 10), shit3, new MatrixCoords(0, -1)));
-        //    this.Run(100);
-        //}
     }
    
 }

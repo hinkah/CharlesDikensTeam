@@ -33,7 +33,7 @@ public static class Init
                    
     //animal
     public const int AnimalLife=100;
-    public const int AnimalAttack=50;
+    public const int AnimalAttack=1001;
     public const int AnimalDefence = 100;
     public const int AnimalBonus=100;
     
