@@ -31,15 +31,11 @@ namespace FightersCon
 
             SuperHero superHero = (SuperHero)movingObjects[superHeroIndex];
 
-
-
-
-
             foreach (var movingObject in movingObjectWithoutHero)
             {
                 if (IsCollision(superHero, movingObject, true))
                 {
-
+                    //Environment.Exit(0);
                 }
             }
 
@@ -61,6 +57,28 @@ namespace FightersCon
                         newSpeed.Row *= -1;
                         newSpeed.Col *= -1;
                         moving.Speed = newSpeed;
+                    }
+                }
+            }
+
+            for (int i = 0; i < movingObjectWithoutHero.Count; i++)
+            {
+                for (int j = i + 1; j < movingObjectWithoutHero.Count; j++)
+                {
+                    MovableObject obj1 = movingObjectWithoutHero[i];
+                    MovableObject obj2 = movingObjectWithoutHero[j];
+
+                    if (IsCollision(obj1, obj2, false))
+                    {
+                        MatrixCoords newSpeed = new MatrixCoords(obj1.Speed.Row, obj1.Speed.Col);
+                        newSpeed.Row *= -1;
+                        newSpeed.Col *= -1;
+                        obj1.Speed = newSpeed;
+                        newSpeed = new MatrixCoords(obj2.Speed.Row, obj2.Speed.Col);
+                        newSpeed.Row *= -1;
+                        newSpeed.Col *= -1;
+                        obj2.Speed = newSpeed;
+
                     }
                 }
             }
