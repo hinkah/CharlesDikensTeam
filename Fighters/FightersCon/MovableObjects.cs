@@ -11,7 +11,7 @@ namespace FightersCon
             this.DefensePower = defencePower;
 
         }
-        public MatrixCoords Speed { get; protected set; } 
+        public MatrixCoords Speed { get; /*protected*/ set; } 
 
         public int AttackPower { get; set; }
 
