@@ -20,6 +20,8 @@ namespace FightersCon
             this.Life = SuperHeroLife;
             this.Gold = SuperHeroGold;
             this.Shoot = SuperHeroShoot;
+            this.AttackPower = SuperHeroAttackPower;
+            this.DefensePower = SuperHeroDefencePower;
             this.Experience = SuperHeroExperience;
 
         }
