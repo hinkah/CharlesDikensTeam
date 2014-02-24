@@ -44,6 +44,7 @@ namespace FightersCon
             while (true)
             {
                 FillTheMap(level);
+                Console.WriteLine();
 
                 while (true)
                 {
