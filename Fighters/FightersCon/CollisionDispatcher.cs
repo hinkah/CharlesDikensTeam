@@ -43,7 +43,14 @@ namespace FightersCon
             {
                 if (IsCollided(superHero, staticObject, DirectionType.All))
                 {
-                    
+                    if ((staticObject is StaticObjects.House) && superHero.Experience >= Init.ExitExperience)
+                    {
+                        Console.SetCursorPosition(50, 13);
+                        Console.Write("YOU WON");
+                        Console.SetCursorPosition(35, 14);
+                        Console.Write("Press any key to start next level");
+                        Console.ReadKey();
+                    }
                 }
             }
 

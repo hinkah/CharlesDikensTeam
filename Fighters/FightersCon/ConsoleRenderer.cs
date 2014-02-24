@@ -66,7 +66,6 @@ namespace FightersCon
 
             Console.SetCursorPosition(0, 0); // placing the cursor at the top left position of the console for printing the next scene.
             Console.Write(scene); // the final printing on the console.
-
         }
 
         public void ClearQueue() // clearing the matrix which includes all the symbols of all objects.

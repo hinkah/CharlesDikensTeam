@@ -126,11 +126,18 @@ namespace FightersCon
                         if (heroAttacs <= enemyAtacs)
                         {
                             this.superHero.Experience += this.enemy.Life;
+                            this.superHero.AttackPower += this.superHero.Experience / 10;
                             enemy.IsDestroyed = true;
                         }
                         else
                         {
-                            throw new ArgumentException("Hero is dead!");         
+                            Console.Clear();
+                            Console.SetCursorPosition(40, 13);
+                            Console.Write("GAME OVER!");
+                            Console.SetCursorPosition(20, 14);
+                            Console.Write("Press any key to EXIT");
+                            Console.ReadKey();
+                            Environment.Exit(0);
                         }
                         stayInMenu = false;
                     }
