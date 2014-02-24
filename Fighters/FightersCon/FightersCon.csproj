@@ -53,7 +53,6 @@
     <Compile Include="CollisionDispatcher.cs" />
     <Compile Include="ConsoleRenderer.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="ICollidable.cs" />
     <Compile Include="IControllable.cs" />
     <Compile Include="IMoveble.cs" />
     <Compile Include="IObjectProducer.cs" />

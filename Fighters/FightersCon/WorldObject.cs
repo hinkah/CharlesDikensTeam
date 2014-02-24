@@ -41,11 +41,6 @@ namespace FightersCon
             return this.body;
         }
 
-        public virtual void RespondToCollision(CollisionData collisionData) // this method returns an answer to what happens after collision.
-        {
-            
-        }
-
         public virtual IEnumerable<WorldObject> ProduceObjects() // this method returns a list of the game objects.
         {
             return new List<WorldObject>();
