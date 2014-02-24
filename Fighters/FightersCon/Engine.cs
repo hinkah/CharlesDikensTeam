@@ -7,12 +7,12 @@ namespace FightersCon
 {
     public class Engine
     {
-        readonly IRenderer renderer; // the interface which prints on the console.
-        readonly IUserInterface userInterface; // the user control on the console via keyboard.
-        readonly List<WorldObject> allObjects; // the list of all objects currently on the console.
-        readonly List<MovableObject> movingObjects; // the list of all MOVING objects currently on the console.
-        readonly List<StaticObject> staticObjects; // the list of all STATIC objects currently on the console.
-        //Ship _playerShip; // creation of the ship object.
+        private readonly IRenderer renderer;                // the interface which prints on the console.
+        private readonly IUserInterface userInterface;      // the user control on the console via keyboard.
+        private readonly List<WorldObject> allObjects;     // the list of all objects currently on the console.
+        private readonly List<MovableObject> movingObjects; // the list of all MOVING objects currently ivate ontherconsole.
+        private readonly List<StaticObject> staticObjects; // the list of all STATIC objects currently on the console.
+        
         public Engine(IRenderer renderer, IUserInterface userInterface) // constructor - creates an on object of the Engine type
         {
             this.renderer = renderer;
@@ -54,23 +54,7 @@ namespace FightersCon
 
                     this.renderer.RenderAll(); // prints all objects on the console.
 
-                    SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
-                    int startRow = 5;
-                    int startCol = 101;
-                    Console.SetCursorPosition(startCol, startRow);
-                    Console.Write("Attack");
-                    Console.SetCursorPosition(startCol, startRow + 1);
-                    Console.Write(ourHero.AttackPower);
-
-                    Console.SetCursorPosition(startCol, startRow + 3);
-                    Console.Write("Life");
-                    Console.SetCursorPosition(startCol, startRow + 4);
-                    Console.Write(ourHero.Life);
-
-                    Console.SetCursorPosition(startCol, startRow + 6);
-                    Console.Write("Experience");
-                    Console.SetCursorPosition(startCol, startRow + 7);
-                    Console.Write(ourHero.Experience);
+                    PrintHeroDetails(5, 101);
 
                     System.Threading.Thread.Sleep(sleepTime); // delays the game so we coul play at a normal speed.
                     foreach (var hero in this.allObjects)
@@ -120,6 +104,27 @@ namespace FightersCon
             }
             
         }
+
+        private void PrintHeroDetails(int startRow, int startCol)
+        {
+            SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
+
+            Console.SetCursorPosition(startCol, startRow);
+            Console.Write("Attack");
+            Console.SetCursorPosition(startCol, startRow + 1);
+            Console.Write(ourHero.AttackPower);
+
+            Console.SetCursorPosition(startCol, startRow + 3);
+            Console.Write("Life");
+            Console.SetCursorPosition(startCol, startRow + 4);
+            Console.Write(ourHero.Life);
+
+            Console.SetCursorPosition(startCol, startRow + 6);
+            Console.Write("Experience");
+            Console.SetCursorPosition(startCol, startRow + 7);
+            Console.Write(ourHero.Experience);
+        }
+
         private void CheckMovingBoundarys()
         {
             foreach (var obj in this.movingObjects)
@@ -145,26 +150,27 @@ namespace FightersCon
                 }          
             }
         }
+
         public void FillTheMap(int i)
         {
             if (i == 1)
             {
+                this.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 500, 300));
                 this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
                 this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
                 this.AddObject(new House(new MatrixCoords(0, 86)));
                 this.AddObject(new Tree(new MatrixCoords(25, 42)));
                 this.AddObject(new Tree(new MatrixCoords(5, 10)));
                 this.AddObject(new Tree(new MatrixCoords(9, 50)));
-                this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
-                this.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 0, 0));
+                this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));                
                 this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
             }
             else if (i == 2)
             {
                 this.staticObjects.Clear();
                 SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
-                MatrixCoords newCoords = new MatrixCoords(34, 0);
-                ourHero.TopLeft = newCoords;
+                ourHero.TopLeft = new MatrixCoords(34, 0);
+
                 this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
                 this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
                 this.AddObject(new House(new MatrixCoords(0, 86)));

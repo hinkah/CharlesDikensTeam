@@ -4,18 +4,15 @@ namespace FightersCon
     public class Trader : Character
     {
         public const int TraderLife = 200;
-        public const int TraderAttackPower = 200;
-        public const int TraderDefencePower = 200;
 
         public Trader(MatrixCoords topLeft, char[,] body, MatrixCoords speed,
             int attackPower, int defencePower, int gold)
-            : base(topLeft, body, speed, TraderAttackPower, TraderDefencePower)
+            : base(topLeft, body, speed, attackPower, defencePower)
         {
             this.Life = TraderLife;
             this.Gold = gold;
-
         }
 
-        public int Gold { get; set; }
+        public int Gold { get; private set; }
     }
 }

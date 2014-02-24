@@ -7,22 +7,20 @@ namespace FightersCon
         private int attackPower;
         private int defencePower;
 
-        protected MovableObject(MatrixCoords topLeft, char[,] body, MatrixCoords speed, int attackPower, int defencePower)
+        protected MovableObject(MatrixCoords topLeft, char[,] body, MatrixCoords speed, 
+            int attackPower, int defencePower)
             : base(topLeft, body)
         {
             this.Speed = speed;
             this.AttackPower = attackPower;
             this.DefensePower = defencePower;
-
         }
+
         public MatrixCoords Speed { get; set; }
 
         public int AttackPower
         {
-            get
-            {
-                return this.attackPower;
-            }
+            get { return this.attackPower; }
             set
             {
                 if (value < 0)
@@ -32,13 +30,10 @@ namespace FightersCon
                 this.attackPower = value;
             }
         }
-        
+
         public int DefensePower
         {
-            get
-            {
-                return this.defencePower;
-            }
+            get { return this.defencePower; }
             set
             {
                 if (value < 0)

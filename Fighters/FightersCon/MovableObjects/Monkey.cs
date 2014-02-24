@@ -3,18 +3,16 @@ namespace FightersCon
 {
     public class Monkey : Animal
     {
-        private const int TurtleLife = Init.AnimalLife;
-        private const int TurtleAttackPower = Init.AnimalAttack;
-        private const int TurtleDefencePower = Init.AnimalDefence;
-        public static char[,] monkeyBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
+        public static char[,] MonkeyBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
                                                    {' ', 'C', ' ','o', 'o', ' '},
                                                    {' ', '_', '(',' ', '^', ')'},
                                                    {'/', ' ', ' ',' ', '~', '\\'}};
+
         public Monkey(MatrixCoords topLeft, MatrixCoords speed)
-            : base(topLeft, monkeyBody, speed, TurtleAttackPower, TurtleDefencePower)
+            : base(topLeft, MonkeyBody, speed, Init.AnimalAttack, Init.AnimalDefence)
         {
-            this.Life = TurtleLife;
-            this.Bonus = TurtleDefencePower;
+            this.Life = Init.AnimalLife; 
+            this.Bonus = Init.AnimalDefence;
         }
     }
 }

@@ -12,9 +12,6 @@ namespace FightersCon
             : base(topLeft, WarriorBody, speed, attackPower, defencePower)
         {
             this.Life = WarriorLife;
-            this.AttackPower = attackPower;
-            this.DefensePower = defencePower;
-
         }
     }
 }
