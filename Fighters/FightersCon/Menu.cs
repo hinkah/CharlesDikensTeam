@@ -11,13 +11,15 @@ namespace FightersCon
     {
         public static string[] Menu;
         public static int index = 0;
+        public static bool stayInMenu = true;
 
-        public static void MainMenu()
+        public static void MainMenu() //call menu
         {
             Initialize();
             DrawMenu();
+            stayInMenu = true;
 
-            while (true)
+            while (stayInMenu)
             {
                 GetKeyboardState();
                 DrawMenu();
@@ -77,10 +79,18 @@ namespace FightersCon
             switch (index)
             {
                 case 1:
+                    {
+                        //attack
+                        stayInMenu = false;
+                    }
 
                     break;
 
                 case 2:
+                    {
+                        //escape
+                        stayInMenu = false;
+                    }
 
                     break;
 
@@ -126,7 +136,9 @@ namespace FightersCon
                     }
                     break;
                 case 7:
-                    
+                    {
+                        stayInMenu = false;
+                    }
                     break;
 
             }
