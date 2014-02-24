@@ -48,9 +48,16 @@ namespace FightersCon
                         Console.SetCursorPosition(50, 13);
                         Console.Write("YOU WON");
                         Console.SetCursorPosition(35, 14);
-                        Console.Write("Press any key to start next level");
-                        Console.ReadKey();
-                        Init.changeLevel = true;
+                        Console.Write("Press \"Enter\" to start next level");
+                        while (true)
+                        {
+                            var keyInfo = Console.ReadKey();
+                            if(keyInfo.Key.Equals(ConsoleKey.Enter))
+                            {
+                                Init.changeLevel = true;
+                                break;
+                            }
+                        }                        
                     }
                 }
             }
