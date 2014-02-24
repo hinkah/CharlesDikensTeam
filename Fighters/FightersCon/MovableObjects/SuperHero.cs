@@ -4,7 +4,7 @@ namespace FightersCon
     public class SuperHero : Character
     {
         public const int SuperHeroLife = 1000;
-        public const int SuperHeroAttackPower = 300;
+        public const int SuperHeroAttackPower = 500;
         public const int SuperHeroDefencePower = 300;
         public const int SuperHeroShoot = 10;
         public const int SuperHeroGold = 100;
