@@ -44,8 +44,7 @@ namespace FightersCon
             while (true)
             {
                 FillTheMap(level);
-                Console.WriteLine();
-
+                
                 while (true)
                 {
                     List<WorldObject> newObjects = StartGame.RuntimeCreatedObjects();
@@ -112,9 +111,11 @@ namespace FightersCon
                     {
                         this.AddObject(obj); // we send the newly created objects to the respective class.
                     }
-                    if (this.movingObjects.Count == 1)
+
+                    if (Init.changeLevel)
                     {
                         level = 2;
+                        Init.changeLevel = false;
                         break;
                     }
                 }
@@ -162,17 +163,20 @@ namespace FightersCon
             }
             else if (i == 2)
             {
+                this.staticObjects.Clear();
+                SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
+                MatrixCoords newCoords = new MatrixCoords(34, 0);
+                ourHero.TopLeft = newCoords;
                 this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
                 this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
                 this.AddObject(new House(new MatrixCoords(0, 86)));
                 this.AddObject(new Tree(new MatrixCoords(0, 72)));
                 this.AddObject(new Tree(new MatrixCoords(7, 72)));
                 this.AddObject(new Tree(new MatrixCoords(7, 82)));
-                this.AddObject(new Tree(new MatrixCoords(25, 41)));
+                this.AddObject(new Tree(new MatrixCoords(25, 42)));
                 this.AddObject(new Tree(new MatrixCoords(5, 10)));
                 this.AddObject(new Tree(new MatrixCoords(9, 50)));
                 this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
-                this.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 0, 0));
                 this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
             }
         }

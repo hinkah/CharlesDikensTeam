@@ -42,7 +42,9 @@ public static class Init
     public const int StaticLife = 20; //for static destroyable objects ok
     // FenceLife = 20;
 
-    public const int ExitExperience = 1;
+    public const int ExitExperience = 500;
+
+    public static bool changeLevel = false;
 
 
 

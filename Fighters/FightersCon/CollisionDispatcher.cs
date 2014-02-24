@@ -50,6 +50,7 @@ namespace FightersCon
                         Console.SetCursorPosition(35, 14);
                         Console.Write("Press any key to start next level");
                         Console.ReadKey();
+                        Init.changeLevel = true;
                     }
                 }
             }
