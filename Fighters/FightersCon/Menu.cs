@@ -137,7 +137,7 @@ namespace FightersCon
             Console.BackgroundColor = ConsoleColor.Black;
         }
 
-        public static void enterMenu(int index,ref SuperHero superHero)
+        public static void enterMenu(int index,ref SuperHero superHero)//ref to 2nd colision object
         {
             switch (index)
             {
