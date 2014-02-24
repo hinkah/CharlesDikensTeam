@@ -100,7 +100,7 @@ namespace FightersCon
             }
             if (info.Key == ConsoleKey.Enter)
             {
-                enterMenu(index);
+                enterMenu(index,ref SuperHero);//?????????????????????
             }
         }
 
@@ -137,7 +137,7 @@ namespace FightersCon
             Console.BackgroundColor = ConsoleColor.Black;
         }
 
-        public static void enterMenu(int index)
+        public static void enterMenu(int index,ref SuperHero superHero)
         {
             switch (index)
             {
@@ -160,30 +160,30 @@ namespace FightersCon
 
                 case 3:
                     {
-                        if (SuperHero.Gold >= 100 && active[index - 1] == true)
+                        if (superHero.Gold >= 100 && active[index - 1] == true)
                         {
-                            SuperHero.Gold -= 100;
-                            SuperHero.Life += 100;
+                            superHero.Gold -= 100;
+                            superHero.Life += 100;
                         }
                         else Console.Beep();
                     }
                     break;
                 case 4:
                     {
-                        if (SuperHero.Gold >= 100 && active[index - 1] == true)
+                        if (superHero.Gold >= 100 && active[index - 1] == true)
                         {
-                            SuperHero.Gold -= 100;
-                            SuperHero.DefencePower += 100;
+                            superHero.Gold -= 100;
+                            superHero.DefensePower += 100;
                         }
                         else Console.Beep();
                     }
                     break;
                 case 5:
                     {
-                        if (SuperHero.Gold >= 100 && active[index - 1] == true)
+                        if (superHero.Gold >= 100 && active[index - 1] == true)
                         {
-                            SuperHero.Gold -= 100;
-                            SuperHero.Shoot += 10;
+                            superHero.Gold -= 100;
+                            superHero.Shoot += 10;
                         }
                         else Console.Beep();
 
@@ -191,10 +191,10 @@ namespace FightersCon
                     break;
                 case 6:
                     {
-                        if (SuperHero.Gold >= 100 && active[index - 1] == true)
+                        if (superHero.Gold >= 100 && active[index - 1] == true)
                         {
-                            SuperHero.Gold -= 100;
-                            SuperHero.Attack += 300;
+                            superHero.Gold -= 100;
+                            superHero.AttackPower += 300;
                         }
                         else Console.Beep();
                     }

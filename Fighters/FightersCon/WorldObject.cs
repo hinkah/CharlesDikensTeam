@@ -18,7 +18,7 @@ namespace FightersCon
             this.Life = InitialLife;
         }
 
-        public int Life { get; protected set; }
+        public int Life { get;  set; }
         public bool IsDestroyed { get; set; }
 
         public MatrixCoords TopLeft
