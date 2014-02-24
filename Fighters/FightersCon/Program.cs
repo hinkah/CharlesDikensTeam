@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace FightersCon
 {
     public class Program
-    {       
+    {
+        public const int consoleRows = 39;
+        public const int consoleCols = 110;
         
         static void Main(string[] args)
         {
-            Engine engine = new Engine(new ConsoleRenderer(30, 110, 0), new KeyboardInterface());
+            Engine engine = new Engine(new ConsoleRenderer(consoleRows, consoleCols, 0), new KeyboardInterface());
             try
             {
                 engine.Run(100);

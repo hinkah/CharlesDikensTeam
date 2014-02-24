@@ -4,8 +4,14 @@ namespace FightersCon.StaticObjects
 {
     public class House : StaticObject
     {
-        public House(MatrixCoords topLeft, char[,] body)
-            : base(topLeft, body)
+        public static char[,] houseBody = new char[,] {{' ', ' ', ' ', '@', ' ', '@', ' ', '@', ' ', ' ', ' ', ' ', ' '},
+                                                       {' ', ' ', '[', ']', '_', '_', '_', ' ', ' ', ' ', ' ', ' ', ' '},
+                                                       {' ', '/', ' ', ' ', ' ', ' ', '/', '\\', '_', '_', '_', '_', ' '},
+                                                       {'/', '_', '/', '\\', '_', '/', '/', '_', '_', '_', '_', '/', '\\'},
+                                                       {'|', ' ', '|', '|', ' ', '|', '|', '|', ' ', ' ', '|', '|', '|'},
+                                                       {'|', ' ', '|', '|', ' ', '|', '|', '|', '_', '_', '|', '|', '|'}};
+        public House(MatrixCoords topLeft)
+            : base(topLeft, houseBody)
         {
             IsDestroyable = false;
             this.Life = int.MaxValue;
