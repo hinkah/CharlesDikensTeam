@@ -48,7 +48,7 @@ namespace FightersCon
             {
                 if (IsCollided(superHero, staticObject, DirectionType.All))
                 {
-
+                    Menu.MainMenu();
                 }
             }
 

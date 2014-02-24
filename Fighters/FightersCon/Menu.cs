@@ -12,7 +12,7 @@ namespace FightersCon
         public static string[] MenuItems;
         public static int index = 0;
         public static bool stayInMenu = true;
-        public static bool[] active = new bool[6] { true, true, true, true, true, true };
+        public static bool[] active = new bool[] { true, true, true, true, true, true, true };
 
         public static void MainMenu() //call menu
         {
@@ -77,7 +77,7 @@ namespace FightersCon
 
         public static void MenuInitialize()
         {
-            MenuItems = new string[] { "1. Attack", "2. Escape", "3. Buy LIFE", "4. Buy ARMOUR", "5. Buy AMMUNITION", "6. Buy ATTACK", "7. Exit from this MenuItems." };
+            MenuItems = new string[] { "1. Attack", "2. Escape" }; //, "3. Buy LIFE", "4. Buy ARMOUR", "5. Buy AMMUNITION", "6. Buy ATTACK", "7. Exit from this MenuItems." };
 
         }
 
@@ -100,7 +100,7 @@ namespace FightersCon
             }
             if (info.Key == ConsoleKey.Enter)
             {
-                enterMenu(index,ref SuperHero);//????????????????????? ref to hero and 2nd colision object
+                //enterMenu(index,ref SuperHero);//????????????????????? ref to hero and 2nd colision object
             }
         }
 
@@ -137,7 +137,7 @@ namespace FightersCon
             Console.BackgroundColor = ConsoleColor.Black;
         }
 
-        public static void enterMenu(int index,ref SuperHero superHero)//ref to 2nd colision object
+        public static void enterMenu(int index,SuperHero superHero)//ref to 2nd colision object
         {
             switch (index)
             {
