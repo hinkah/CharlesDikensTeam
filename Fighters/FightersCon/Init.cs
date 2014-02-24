@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-public static class Init
+﻿public static class Init
 {
     //world
     public static int WorldRows = 60;

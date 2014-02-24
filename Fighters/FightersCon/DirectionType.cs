@@ -3,7 +3,7 @@
     public enum DirectionType
     {
         Left,
-        Rigth,
+        Right,
         Top,
         Bottom,
         All,

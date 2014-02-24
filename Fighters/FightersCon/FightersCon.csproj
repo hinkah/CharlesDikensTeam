@@ -53,7 +53,7 @@
     <Compile Include="ConsoleRenderer.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="IControllable.cs" />
-    <Compile Include="IMoveble.cs" />
+    <Compile Include="IMovable.cs" />
     <Compile Include="IObjectProducer.cs" />
     <Compile Include="IRenderable.cs" />
     <Compile Include="IRenderer.cs" />

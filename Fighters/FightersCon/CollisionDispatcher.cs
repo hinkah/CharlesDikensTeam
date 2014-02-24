@@ -34,8 +34,8 @@ namespace FightersCon
                 if (IsCollided(superHero, movingObject, DirectionType.All))
                 {
                     //Menu.MainMenu(superHero, movingObject);
-                    Menu menu = new Menu();
-                    menu.MainMenu(superHero, movingObject);
+                    Menu menu = new Menu(superHero, movingObject);
+                    menu.ShowMenu();
                 }
             }
 
@@ -158,7 +158,7 @@ namespace FightersCon
             {
                 case DirectionType.Bottom: return bottom;
                 case DirectionType.Left: return left;
-                case DirectionType.Rigth: return right;
+                case DirectionType.Right: return right;
                 case DirectionType.Top: return top;
                 case DirectionType.All: return bottom || left || right || top;
                 default: return false;

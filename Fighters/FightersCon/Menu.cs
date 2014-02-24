@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FightersCon
+﻿namespace FightersCon
 {
+    using System;
+    using System.Linq;
+
     public class Menu
     {
         private static string[] MenuItems;
@@ -16,21 +12,18 @@ namespace FightersCon
         private SuperHero superHero;
         private MovableObject enemy;
 
-        public Menu()
+        public Menu(SuperHero hero, MovableObject movableObject)
         {
-
-        }
-
-        public void MainMenu(SuperHero hero, MovableObject movableObject) //call menu
-        {
-            MenuInitialize();
-            DrawMenu();
-
-            stayInMenu = true;
-            this.index = 0;
-
             this.superHero = hero;
             this.enemy = movableObject;
+            this.index = 0;
+            stayInMenu = true;
+        }
+
+        public void ShowMenu()
+        {
+            MenuInitialize();
+            DrawMenu();  
 
             while (stayInMenu)
             {
@@ -159,7 +152,7 @@ namespace FightersCon
                         {
                             newCoords.Col = -1;
                         }
-                        if (CollisionDispatcher.IsCollided(this.superHero, this.enemy, DirectionType.Rigth))
+                        if (CollisionDispatcher.IsCollided(this.superHero, this.enemy, DirectionType.Right))
                         {
                             newCoords.Col = 1;
                         }

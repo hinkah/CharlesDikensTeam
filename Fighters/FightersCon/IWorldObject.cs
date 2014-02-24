@@ -1,5 +1,4 @@
-﻿
-namespace FightersCon
+﻿namespace FightersCon
 {
     public interface IWorldObject
     {

@@ -21,7 +21,7 @@ namespace FightersCon
                     {
                         collisionLeft = true;
                     }
-                    if (CollisionDispatcher.IsCollided(hero, item, DirectionType.Rigth))
+                    if (CollisionDispatcher.IsCollided(hero, item, DirectionType.Right))
                     {
                         collisionRight = true;
                     }
