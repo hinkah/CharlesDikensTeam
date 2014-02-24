@@ -33,14 +33,9 @@ namespace FightersCon
             {
                 if (IsCollided(superHero, movingObject, DirectionType.All))
                 {
-                    if (superHero.Life < movingObject.AttackPower)
-                    {
-                        throw new ArgumentException("Hero is dead!");
-                    }
-                    else
-                    {
-                        movingObject.IsDestroyed = true;
-                    }
+                    //Menu.MainMenu(superHero, movingObject);
+                    Menu menu = new Menu();
+                    menu.MainMenu(superHero, movingObject);
                 }
             }
 
@@ -48,7 +43,7 @@ namespace FightersCon
             {
                 if (IsCollided(superHero, staticObject, DirectionType.All))
                 {
-                    Menu.MainMenu();
+                    
                 }
             }
 
