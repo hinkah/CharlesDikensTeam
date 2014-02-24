@@ -6,9 +6,12 @@ namespace FightersCon
         public const int WarriorLife = 200;
         public const int WarriorAttackPower = 200;
         public const int WarriorDefencePower = 200;
-
-        public Warrior(MatrixCoords topLeft, char[,] body, MatrixCoords speed,int attackPower, int defencePower)
-            : base(topLeft, body, speed, WarriorAttackPower, WarriorDefencePower)
+        public static char[,] warriorBody = new char[,] {{' ', '@', '@', '@', '@', '@', ' '},
+                                                      {'(', '|', '.',' ', '.', '|', ')'},
+                                                      {' ', '\\', ' ','V', ' ', '/', ' '},
+                                                      {' ', ' ', '\\','~', '/', ' ', ' '}};
+        public Warrior(MatrixCoords topLeft, MatrixCoords speed,int attackPower, int defencePower)
+            : base(topLeft, warriorBody, speed, WarriorAttackPower, WarriorDefencePower)
         {
             this.Life = WarriorLife;
 

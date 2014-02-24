@@ -112,7 +112,7 @@ namespace FightersCon
                     {
                         obj.Speed = new MatrixCoords(0, 1);
                     }
-                    if (obj.TopLeft.Col == 94)
+                    if (obj.TopLeft.Col == Program.consoleCols - obj.GetImage().GetLength(1))
                     {
                         obj.Speed = new MatrixCoords(0, -1);
                     }
@@ -120,7 +120,7 @@ namespace FightersCon
                     {
                         obj.Speed = new MatrixCoords(1, 0);
                     }
-                    if (obj.TopLeft.Row == 28)
+                    if (obj.TopLeft.Row == Program.consoleRows - obj.GetImage().GetLength(0))
                     {
                         obj.Speed = new MatrixCoords(-1, 0);
                     }
@@ -131,20 +131,18 @@ namespace FightersCon
         {
             if (i == 1)
             {
-                char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
-                                       {' ', 'H', 'E','R', 'O', ' '}};
-                               
+                this.AddObject(new Warrior(new MatrixCoords(25, 60), new MatrixCoords(0, 0), 0, 0));
+                this.AddObject(new Wolf(new MatrixCoords(12, 10), new MatrixCoords(0, 1)));
+                this.AddObject(new House(new MatrixCoords(0, 86)));
                 this.AddObject(new Tree(new MatrixCoords(25, 40)));
                 this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
                 this.AddObject(new SuperHero(new MatrixCoords(25, 50), new MatrixCoords(0, 0), 0, 0));
-                this.AddObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
+                this.AddObject(new Monkey(new MatrixCoords(25, 10), new MatrixCoords(0, -1)));
             }
             else if (i == 2)
             {
-                char[,] shit2 = new char[,] {{'(', '\'', '_', '_', '\'', ')'},
-                                       {' ', 'H', 'E','R', 'O', ' '}};
                 this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
-                this.AddObject(new Turtle(new MatrixCoords(25, 10), shit2, new MatrixCoords(0, -1)));
+                this.AddObject(new Monkey(new MatrixCoords(25, 10), new MatrixCoords(0, -1)));
             }
         }
     }

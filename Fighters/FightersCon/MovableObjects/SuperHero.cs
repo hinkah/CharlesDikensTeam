@@ -9,10 +9,12 @@ namespace FightersCon
         public const int SuperHeroShoot = 10;
         public const int SuperHeroGold = 100;
         public const int SuperHeroExperience = 1;
-        public static char[,] heroBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
-                                                   {' ', 'C', ' ','o', 'o', ' '},
-                                                   {' ', '_', '(',' ', '^', ')'},
-                                                   {'/', ' ', ' ',' ', '~', '\\'}}; 
+        public static char[,] heroBody = new char[,] {{'/', '/', '-', '-', '\\'},
+                                                      {'C', ' ', 'O',' ', 'O'},
+                                                      {' ', '\\', ' ',' ', '>'},
+                                                      {' ', ' ', '\\','_', '-'}};
+
+        
 
         public SuperHero(MatrixCoords topLeft, MatrixCoords speed,int attackPower, int defencePower)
             : base(topLeft, heroBody, speed, SuperHeroAttackPower, SuperHeroDefencePower)
@@ -32,3 +34,5 @@ namespace FightersCon
         
     }
 }
+
+
