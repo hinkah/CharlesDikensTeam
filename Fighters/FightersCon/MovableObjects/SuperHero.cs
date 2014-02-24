@@ -26,8 +26,9 @@ namespace FightersCon
 
         }
 
-        public int Gold { get; private set; }
-        public int Shoot { get; private set; }
-        public int Experience { get; private set; } 
+        public int Gold { get; set; }
+        public int Shoot { get; set; }
+        public int Experience { get; set; }
+        
     }
 }
