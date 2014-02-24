@@ -120,14 +120,17 @@ namespace FightersCon
             {
                 case 0: //attack
                     {
+                        double enemyAtacs = this.superHero.Life / this.enemy.AttackPower;
+                        double heroAttacs = this.enemy.Life / this.superHero.AttackPower;
 
-                        if (this.superHero.Life < this.enemy.AttackPower)
+                        if (heroAttacs <= enemyAtacs)
                         {
-                            throw new ArgumentException("Hero is dead!");
+                            this.superHero.Experience += this.enemy.Life;
+                            enemy.IsDestroyed = true;
                         }
                         else
                         {
-                            enemy.IsDestroyed = true;
+                            throw new ArgumentException("Hero is dead!");         
                         }
                         stayInMenu = false;
                     }

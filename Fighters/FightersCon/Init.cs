@@ -13,7 +13,7 @@ public static class Init
     public static int WorldMoveObjects = 15;
     public static int WorldStaticObjects = 80;
 
-    public static int WhootPower=10;
+    public static int WhootPower = 10;
 
     //WorldObject.InitialLife = 100;
     //hero
@@ -26,21 +26,21 @@ public static class Init
 
     //other person
     public const int PersonLife = 200;
-    public const int PersonAttack=200;
+    public const int PersonAttack = 200;
     public const int PersonDefence = 200;
-    public const int PersonShoot=20;
-    public const int PersonGold=100;
-                   
+    public const int PersonShoot = 20;
+    public const int PersonGold = 100;
+
     //animal
-    public const int AnimalLife=100;
-    public const int AnimalAttack=0;
+    public const int AnimalLife = 100;
+    public const int AnimalAttack = 20;
     public const int AnimalDefence = 100;
-    public const int AnimalBonus=100;
-    
+    public const int AnimalBonus = 100;
+
     //static objects
-    public const int StaticLife=20; //for static destroyable objects ok
+    public const int StaticLife = 20; //for static destroyable objects ok
     // FenceLife = 20;
-    
+
 
 
 }

@@ -134,10 +134,10 @@ namespace FightersCon
                 }
             }
 
-            bool right = (firstRight == secondLeft) && horizontalMatch;
-            bool left = (firstLeft == secondRight) && horizontalMatch;
-            bool top = (firstTop == secondBottom) && verticalMatch;
-            bool bottom = (firstBottom == secondTop) && verticalMatch;
+            bool right = (firstRight >= secondLeft && firstRight < secondRight) && horizontalMatch;
+            bool left = (firstLeft > secondLeft && firstLeft <= secondRight) && horizontalMatch;
+            bool top = (firstTop > secondTop && firstTop <= secondBottom) && verticalMatch;
+            bool bottom = (firstBottom >= secondTop && firstBottom <= secondBottom) && verticalMatch;
 
             switch (direction)
             {

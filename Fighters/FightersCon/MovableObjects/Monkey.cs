@@ -3,9 +3,9 @@ namespace FightersCon
 {
     public class Monkey : Animal
     {
-        private const int TurtleLife = 100;             //Init.AnimalLife;
-        private const int TurtleAttackPower = 0;
-        private const int TurtleDefencePower = 100;      //Init.AnimalDefence;
+        private const int TurtleLife = Init.AnimalLife;
+        private const int TurtleAttackPower = Init.AnimalAttack;
+        private const int TurtleDefencePower = Init.AnimalDefence;
         public static char[,] monkeyBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
                                                    {' ', 'C', ' ','o', 'o', ' '},
                                                    {' ', '_', '(',' ', '^', ')'},
