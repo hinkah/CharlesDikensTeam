@@ -9,7 +9,7 @@ namespace FightersCon
     public class Program
     {
         public const int consoleRows = 39;
-        public const int consoleCols = 110;
+        public const int consoleCols = 100;
         
         static void Main(string[] args)
         {

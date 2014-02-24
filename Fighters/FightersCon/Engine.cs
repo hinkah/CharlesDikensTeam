@@ -40,10 +40,10 @@ namespace FightersCon
 
         public virtual void Run(int sleepTime) // the engine of the game - this is where the starts.
         {
-            int intttt = 1;
+            int level = 1;
             while (true)
             {
-                FillTheMap(intttt);
+                FillTheMap(level);
 
                 while (true)
                 {
@@ -55,6 +55,24 @@ namespace FightersCon
                     }
 
                     this.renderer.RenderAll(); // prints all objects on the console.
+
+                    SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
+                    int startRow = 5;
+                    int startCol = 101;
+                    Console.SetCursorPosition(startCol, startRow);
+                    Console.Write("Attack");
+                    Console.SetCursorPosition(startCol, startRow + 1);
+                    Console.Write(ourHero.AttackPower);
+
+                    Console.SetCursorPosition(startCol, startRow + 3);
+                    Console.Write("Life");
+                    Console.SetCursorPosition(startCol, startRow + 4);
+                    Console.Write(ourHero.Life);
+
+                    Console.SetCursorPosition(startCol, startRow + 6);
+                    Console.Write("Experience");
+                    Console.SetCursorPosition(startCol, startRow + 7);
+                    Console.Write(ourHero.Experience);
 
                     System.Threading.Thread.Sleep(sleepTime); // delays the game so we coul play at a normal speed.
                     foreach (var hero in this.allObjects)
@@ -95,7 +113,7 @@ namespace FightersCon
                     }
                     if (this.movingObjects.Count == 1)
                     {
-                        intttt = 2;
+                        level = 2;
                         break;
                     }
                 }
@@ -131,18 +149,30 @@ namespace FightersCon
         {
             if (i == 1)
             {
-                this.AddObject(new Warrior(new MatrixCoords(25, 60), new MatrixCoords(0, 0), 0, 0));
-                this.AddObject(new Wolf(new MatrixCoords(12, 10), new MatrixCoords(0, 1)));
+                this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
+                this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
                 this.AddObject(new House(new MatrixCoords(0, 86)));
-                this.AddObject(new Tree(new MatrixCoords(25, 40)));
-                this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
-                this.AddObject(new SuperHero(new MatrixCoords(25, 50), new MatrixCoords(0, 0), 0, 0));
-                this.AddObject(new Monkey(new MatrixCoords(25, 10), new MatrixCoords(0, -1)));
+                this.AddObject(new Tree(new MatrixCoords(25, 42)));
+                this.AddObject(new Tree(new MatrixCoords(5, 10)));
+                this.AddObject(new Tree(new MatrixCoords(9, 50)));
+                this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
+                this.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 0, 0));
+                this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
             }
             else if (i == 2)
             {
-                this.AddObject(new Rabbit(new MatrixCoords(0, 20), new MatrixCoords(1, 0)));
-                this.AddObject(new Monkey(new MatrixCoords(25, 10), new MatrixCoords(0, -1)));
+                this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
+                this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+                this.AddObject(new House(new MatrixCoords(0, 86)));
+                this.AddObject(new Tree(new MatrixCoords(0, 72)));
+                this.AddObject(new Tree(new MatrixCoords(7, 72)));
+                this.AddObject(new Tree(new MatrixCoords(7, 82)));
+                this.AddObject(new Tree(new MatrixCoords(25, 41)));
+                this.AddObject(new Tree(new MatrixCoords(5, 10)));
+                this.AddObject(new Tree(new MatrixCoords(9, 50)));
+                this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
+                this.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 0, 0));
+                this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
             }
         }
     }
