@@ -37,11 +37,15 @@ namespace FightersCon
             }
 
             var keyInfo = Console.ReadKey();
+            var oneLeft = new MatrixCoords(0, -2);
+            var oneRight = new MatrixCoords(0, 2);
+            var oneUp = new MatrixCoords(-1, 0);
+            var oneDown = new MatrixCoords(1, 0);
             if (keyInfo.Key.Equals(ConsoleKey.LeftArrow))
             {
                 if (hero.TopLeft.Col > 0 && !collisionLeft)
                 {
-                    hero.TopLeft = hero.TopLeft + new MatrixCoords(0, -2);
+                    hero.TopLeft = hero.TopLeft + oneLeft;
                 }
 
 
@@ -50,7 +54,7 @@ namespace FightersCon
             {
                 if (hero.TopLeft.Col < 94 && !collisionRight)
                 {
-                    hero.TopLeft = hero.TopLeft + new MatrixCoords(0, 2);
+                    hero.TopLeft = hero.TopLeft + oneRight;
                 }
 
             }
@@ -58,7 +62,7 @@ namespace FightersCon
             {
                 if (hero.TopLeft.Row > 0 && !collisionTop)
                 {
-                    hero.TopLeft = hero.TopLeft + new MatrixCoords(-1, 0);
+                    hero.TopLeft = hero.TopLeft + oneUp;
                 }
 
             }
@@ -66,7 +70,7 @@ namespace FightersCon
             {
                 if (hero.TopLeft.Row < 26 && !collisionBottom)
                 {
-                    hero.TopLeft = hero.TopLeft + new MatrixCoords(1, 0);
+                    hero.TopLeft = hero.TopLeft + oneDown;
                 }
 
             }
