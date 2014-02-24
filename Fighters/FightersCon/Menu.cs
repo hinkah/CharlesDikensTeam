@@ -12,12 +12,61 @@ namespace FightersCon
         public static string[] Menu;
         public static int index = 0;
         public static bool stayInMenu = true;
+        public static bool[] active = new bool[6] { true, true, true, true, true, true, true};
 
         public static void MainMenu() //call menu
         {
             Initialize();
             DrawMenu();
             stayInMenu = true;
+            index = 0;
+            for (int i = 0; i < active.Length - 1;i++)
+            {
+                active[i] = true;
+            }
+
+            string objType;
+            //TODO:check colision object type to objType
+            
+            switch (objType)
+            {
+                case "Animal":
+                    {
+                        active[2] = false;
+                        active[3] = false;
+                        active[4] = false;
+                        active[5] = false;
+                    }
+                    break;
+
+                case "Warrior":
+                    {
+                        active[2] = false;
+                        active[3] = false;
+                        active[4] = false;
+                        active[5] = false;
+                    }
+                    break;
+
+                case "Trader":
+                    {
+                        active[0] = false;
+                        active[1] = false;
+                    }
+                    break;
+
+                case "Villager":
+                    {
+                        active[3] = false;
+                        active[4] = false;
+                        active[5] = false;
+                    }
+                    break;
+            }
+             
+             
+             
+             
 
             while (stayInMenu)
             {
@@ -60,14 +109,28 @@ namespace FightersCon
             Console.SetCursorPosition(0, 0);
             for (int i = 0; i < Menu.Length; i++)
             {
-                if (i == index)
+                if (i == index&&active[i]==true)
                 {
                     Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine(Menu[i]);
                 }
-                else
+                else if (i == index && active[i]==false)
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine(Menu[i]);
+                }
+                else if(active[i]==true)
                 {
                     Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(Menu[i]);
+                }
+                else if (active[i] == false)
+                {
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine(Menu[i]);
                 }
             }
@@ -80,6 +143,7 @@ namespace FightersCon
             {
                 case 1:
                     {
+
                         //attack
                         stayInMenu = false;
                     }
@@ -96,7 +160,7 @@ namespace FightersCon
 
                 case 3:
                     {
-                        if (SuperHero.Gold >= 100)
+                        if (SuperHero.Gold >= 100 && active[index-1]==true)
                         {
                             SuperHero.Gold -= 100;
                             SuperHero.Life += 100;
@@ -106,7 +170,7 @@ namespace FightersCon
                     break;
                 case 4:
                     {
-                        if (SuperHero.Gold >= 100)
+                        if (SuperHero.Gold >= 100 && active[index - 1] == true)
                         {
                             SuperHero.Gold -= 100;
                             SuperHero.DefencePower += 100;
@@ -116,7 +180,7 @@ namespace FightersCon
                     break;
                 case 5:
                     {
-                        if (SuperHero.Gold >= 100)
+                        if (SuperHero.Gold >= 100 && active[index - 1] == true)
                         {
                             SuperHero.Gold -= 100;
                             SuperHero.Shoot += 10;
@@ -127,7 +191,7 @@ namespace FightersCon
                     break;
                 case 6:
 {
-                        if (SuperHero.Gold >= 100)
+                        if (SuperHero.Gold >= 100&& active[index-1]==true)
                         {
                             SuperHero.Gold -= 100;
                             SuperHero.Attack += 300;
