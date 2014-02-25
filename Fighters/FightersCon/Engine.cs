@@ -107,6 +107,12 @@ namespace FightersCon
 
         private void PrintHeroDetails(int startRow, int startCol)
         {
+            for (int i = 0; i < 39; i++)
+            {
+                Console.SetCursorPosition(startCol-1, i);
+                Console.Write('|');
+            }
+
             SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
 
             Console.SetCursorPosition(startCol, startRow);
@@ -164,11 +170,14 @@ namespace FightersCon
                 this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(-1, -1)));
             }
             else if (i == 2)
-            {
-                this.staticObjects.Clear();
+            {                
                 SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
                 ourHero.TopLeft = new MatrixCoords(34, 0);
+                this.staticObjects.Clear();
+                this.allObjects.Clear();
+                this.movingObjects.Clear();
 
+                this.AddObject(ourHero);
                 this.AddObject(new House(new MatrixCoords(0, 86)));
                 this.AddObject(new Tree(new MatrixCoords(0, 72)));
                 this.AddObject(new Tree(new MatrixCoords(7, 72)));
