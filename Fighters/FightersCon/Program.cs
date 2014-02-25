@@ -18,7 +18,7 @@ namespace FightersCon
             {
                 engine.Run(100);
             }
-            catch (ArgumentException e)
+            catch (InvalidPowerValueException e)
             {
                 Console.Clear();
                 Console.WriteLine(e.Message);
