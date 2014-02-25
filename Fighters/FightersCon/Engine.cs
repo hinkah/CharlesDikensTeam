@@ -12,7 +12,7 @@ namespace FightersCon
         private readonly List<WorldObject> allObjects;     // the list of all objects currently on the console.
         private readonly List<MovableObject> movingObjects; // the list of all MOVING objects currently ivate ontherconsole.
         private readonly List<StaticObject> staticObjects; // the list of all STATIC objects currently on the console.
-        
+
         public Engine(IRenderer renderer, IUserInterface userInterface) // constructor - creates an on object of the Engine type
         {
             this.renderer = renderer;
@@ -32,7 +32,7 @@ namespace FightersCon
             else
             {
                 this.staticObjects.Add((StaticObject)obj);
-                this.allObjects.Add(obj);                
+                this.allObjects.Add(obj);
             }
         }
 
@@ -42,7 +42,7 @@ namespace FightersCon
             while (true)
             {
                 FillTheMap(level);
-                
+
                 while (true)
                 {
                     List<WorldObject> newObjects = StartGame.RuntimeCreatedObjects();
@@ -102,7 +102,7 @@ namespace FightersCon
                     }
                 }
             }
-            
+
         }
 
         private void PrintHeroDetails(int startRow, int startCol)
@@ -131,23 +131,19 @@ namespace FightersCon
             {
                 if (obj is SuperHero == false)
                 {
-                    if (obj.TopLeft.Col == 0)
+                    MatrixCoords newCoords = obj.Speed;
+                    if ((obj.TopLeft.Col <= 0 && newCoords.Col < 0) ||
+                        (obj.TopLeft.Col >= (Program.consoleCols - obj.GetImage().GetLength(1))) && newCoords.Col > 0)
                     {
-                        obj.Speed = new MatrixCoords(0, 1);
+                        newCoords.Col *= -1;
                     }
-                    if (obj.TopLeft.Col == Program.consoleCols - obj.GetImage().GetLength(1))
+                    if ((obj.TopLeft.Row <= 0 && newCoords.Row < 0) ||
+                        (obj.TopLeft.Row >= (Program.consoleRows - obj.GetImage().GetLength(0)) && newCoords.Row > 0))
                     {
-                        obj.Speed = new MatrixCoords(0, -1);
+                        newCoords.Row *= -1;
                     }
-                    if (obj.TopLeft.Row == 0)
-                    {
-                        obj.Speed = new MatrixCoords(1, 0);
-                    }
-                    if (obj.TopLeft.Row == Program.consoleRows - obj.GetImage().GetLength(0))
-                    {
-                        obj.Speed = new MatrixCoords(-1, 0);
-                    }
-                }          
+                    obj.Speed = newCoords;
+                }
             }
         }
 
@@ -156,14 +152,16 @@ namespace FightersCon
             if (i == 1)
             {
                 this.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 500, 300));
-                this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
-                this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+
                 this.AddObject(new House(new MatrixCoords(0, 86)));
-                this.AddObject(new Tree(new MatrixCoords(25, 42)));
-                this.AddObject(new Tree(new MatrixCoords(5, 10)));
+                this.AddObject(new Tree(new MatrixCoords(28, 42)));
+                this.AddObject(new Tree(new MatrixCoords(5, 20)));
                 this.AddObject(new Tree(new MatrixCoords(9, 50)));
-                this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));                
-                this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
+
+                this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(1, -1)));
+                this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+                this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 1)));
+                this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(-1, -1)));
             }
             else if (i == 2)
             {
@@ -171,8 +169,6 @@ namespace FightersCon
                 SuperHero ourHero = (SuperHero)this.allObjects.Find(h => h is SuperHero);
                 ourHero.TopLeft = new MatrixCoords(34, 0);
 
-                this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
-                this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
                 this.AddObject(new House(new MatrixCoords(0, 86)));
                 this.AddObject(new Tree(new MatrixCoords(0, 72)));
                 this.AddObject(new Tree(new MatrixCoords(7, 72)));
@@ -180,10 +176,13 @@ namespace FightersCon
                 this.AddObject(new Tree(new MatrixCoords(25, 42)));
                 this.AddObject(new Tree(new MatrixCoords(5, 10)));
                 this.AddObject(new Tree(new MatrixCoords(9, 50)));
+
+                this.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
+                this.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
                 this.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
                 this.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
             }
         }
     }
-   
+
 }

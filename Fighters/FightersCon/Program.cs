@@ -8,8 +8,11 @@ namespace FightersCon
         public const int consoleRows = 39;
         public const int consoleCols = 100;
         
-        static void Main(string[] args)
+        static void Main()
         {
+            Console.SetBufferSize(112, 39);
+            Console.SetWindowSize(112, 39);
+
             Engine engine = new Engine(new ConsoleRenderer(consoleRows, consoleCols, 0), new KeyboardInterface());
             try
             {

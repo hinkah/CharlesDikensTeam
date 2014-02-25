@@ -52,12 +52,12 @@ namespace FightersCon
                         while (true)
                         {
                             var keyInfo = Console.ReadKey();
-                            if(keyInfo.Key.Equals(ConsoleKey.Enter))
+                            if (keyInfo.Key.Equals(ConsoleKey.Enter))
                             {
                                 Init.changeLevel = true;
                                 break;
                             }
-                        }                        
+                        }
                     }
                 }
             }
@@ -66,13 +66,18 @@ namespace FightersCon
             {
                 foreach (var staticObject in staticObjects)
                 {
-                    if (IsCollided(moving, staticObject, DirectionType.All))
+                    MatrixCoords newSpeed = moving.Speed;
+                    if (IsCollided(moving, staticObject, DirectionType.Top) ||
+                        IsCollided(moving, staticObject, DirectionType.Bottom))
                     {
-                        MatrixCoords newSpeed = new MatrixCoords(moving.Speed.Row, moving.Speed.Col);
                         newSpeed.Row *= -1;
-                        newSpeed.Col *= -1;
-                        moving.Speed = newSpeed;
                     }
+                    if (IsCollided(moving, staticObject, DirectionType.Left) ||
+                        IsCollided(moving, staticObject, DirectionType.Right))
+                    {
+                        newSpeed.Col *= -1;
+                    }
+                    moving.Speed = newSpeed;
                 }
             }
 
