@@ -9,9 +9,9 @@ namespace FightersCon
     {
         private readonly IRenderer renderer;                // the interface which prints on the console.
         private readonly IUserInterface userInterface;      // the user control on the console via keyboard.
-        private readonly List<WorldObject> allObjects;     // the list of all objects currently on the console.
-        private readonly List<MovableObject> movingObjects; // the list of all MOVING objects currently ivate ontherconsole.
-        private readonly List<StaticObject> staticObjects; // the list of all STATIC objects currently on the console.
+        public readonly List<WorldObject> allObjects;     // the list of all objects currently on the console.
+        public readonly List<MovableObject> movingObjects; // the list of all MOVING objects currently ivate ontherconsole.
+        public readonly List<StaticObject> staticObjects; // the list of all STATIC objects currently on the console.
 
         public Engine(IRenderer renderer, IUserInterface userInterface) // constructor - creates an on object of the Engine type
         {
@@ -41,7 +41,7 @@ namespace FightersCon
             int level = 1;
             while (true)
             {
-                FillTheMap(level);
+                StartGame.FillTheMap(level, this);
 
                 while (true)
                 {
