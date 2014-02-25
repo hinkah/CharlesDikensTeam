@@ -113,13 +113,8 @@
             {
                 case 0: //attack
                     {
-                        double enemyAtacs = this.superHero.Life / this.enemy.AttackPower;
-                        double heroAttacs = this.enemy.Life / this.superHero.AttackPower;
-
-                        if (heroAttacs <= enemyAtacs)
+                        if (this.superHero.Attack(this.enemy))
                         {
-                            this.superHero.Experience += this.enemy.Life;
-                            this.superHero.AttackPower += this.superHero.Experience / 10;
                             enemy.IsDestroyed = true;
                         }
                         else

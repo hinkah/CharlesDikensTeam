@@ -3,16 +3,16 @@ namespace FightersCon
 {
     public class Monkey : Animal
     {
-        public static char[,] MonkeyBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
+        private static char[,] MonkeyBody = new char[,] {{' ', ' ', '/', '~', '\\', ' '},
                                                    {' ', 'C', ' ','o', 'o', ' '},
                                                    {' ', '_', '(',' ', '^', ')'},
                                                    {'/', ' ', ' ',' ', '~', '\\'}};
 
         public Monkey(MatrixCoords topLeft, MatrixCoords speed)
-            : base(topLeft, MonkeyBody, speed, Init.AnimalAttack, Init.AnimalDefence)
+            : base(topLeft, MonkeyBody, speed, AnimalAttack, AnimalDefence)
         {
-            this.Life = Init.AnimalLife; 
-            this.Bonus = Init.AnimalDefence;
+            this.Life = AnimalLife; 
+            this.Bonus = AnimalDefence;
         }
     }
 }

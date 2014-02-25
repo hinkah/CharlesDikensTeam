@@ -3,7 +3,7 @@ namespace FightersCon
 {
     public class Trader : Character
     {
-        public const int TraderLife = 200;
+        private const int TraderLife = 200;
 
         public Trader(MatrixCoords topLeft, char[,] body, MatrixCoords speed,
             int attackPower, int defencePower, int gold)

@@ -6,9 +6,10 @@ namespace FightersCon
 {
     public static class CollisionDispatcher
     {
-        public static void HandleCollisions(List<MovableObject> movingObjects, List<StaticObject> staticObjects) // this method calls a second method for a collision of moving andstatic onjects
+        public static bool HandleCollisions(List<MovableObject> movingObjects, List<StaticObject> staticObjects) // this method calls a second method for a collision of moving andstatic onjects
         {
             //HandleMovingWithStaticCollisions(movingObjects, staticObjects);
+            bool exitCollision = false;
 
             var movingObjectWithoutHero = new List<MovableObject>();
 
@@ -43,7 +44,7 @@ namespace FightersCon
             {
                 if (IsCollided(superHero, staticObject, DirectionType.All))
                 {
-                    if ((staticObject is StaticObjects.House) && superHero.Experience >= Init.ExitExperience)
+                    if ((staticObject is House) && superHero.Experience >= Program.LevelExitExperience)
                     {
                         Console.SetCursorPosition(50, 13);
                         Console.Write("YOU WON");
@@ -54,8 +55,12 @@ namespace FightersCon
                             var keyInfo = Console.ReadKey();
                             if (keyInfo.Key.Equals(ConsoleKey.Enter))
                             {
-                                Init.changeLevel = true;
+                                exitCollision = true;
                                 break;
+                            }
+                            while (Console.KeyAvailable)
+                            {
+                                Console.ReadKey();
                             }
                         }
                     }
@@ -101,6 +106,8 @@ namespace FightersCon
                     }
                 }
             }
+
+            return exitCollision;
         }
 
         public static bool IsCollided(WorldObject first, WorldObject second, DirectionType direction)

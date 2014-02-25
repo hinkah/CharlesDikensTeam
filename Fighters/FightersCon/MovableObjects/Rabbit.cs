@@ -10,10 +10,10 @@ namespace FightersCon
         };
 
         public Rabbit(MatrixCoords topLeft, MatrixCoords speed)
-            : base(topLeft, rabbitBody, speed, Init.AnimalAttack, 0)
+            : base(topLeft, rabbitBody, speed, AnimalAttack, 0)
         {
-            this.Life = Init.AnimalLife;
-            this.Bonus = Init.AnimalBonus;
+            this.Life = AnimalLife;
+            this.Bonus = AnimalBonus;
         }
     }
 }

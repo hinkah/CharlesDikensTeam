@@ -3,17 +3,17 @@ namespace FightersCon
 {
     public class Wolf : Animal
     {
-        public static char[,] WolfBody = new char[,] {{' ', '_', '_', '_', '_', '|', '\\', ' ', ' ', ' '},
+        private static char[,] WolfBody = new char[,] {{' ', '_', '_', '_', '_', '|', '\\', ' ', ' ', ' '},
                                                        {'`', '_', '/', ' ', ' ', ' ', ' ', '\\', ' ', ' '},
                                                        {' ', '(', '\\', '_', '/', ')', ' ', ' ', '\\', ' '},
                                                        {' ', '/', '_', ' ', ' ', '_', ' ', ' ', ' ', '|'},
                                                        {' ', '\\', '/', '_', '/', '|', '|', ')', ' ', '/'},
                                                        {' ', ' ', ' ', ' ', '\'', '_', '_', '_', '\'', ' '}};
         public Wolf(MatrixCoords topLeft, MatrixCoords speed)
-            : base(topLeft, WolfBody, speed, Init.AnimalAttack, 0)
+            : base(topLeft, WolfBody, speed, AnimalAttack, 0)
         {
-            this.Life = Init.AnimalLife;
-            this.Bonus = Init.AnimalAttack;
+            this.Life = AnimalLife;
+            this.Bonus = AnimalAttack;
         }
     }
 }

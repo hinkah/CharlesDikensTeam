@@ -3,7 +3,7 @@ namespace FightersCon
 {
     public class Villager : Character
     {
-        public const int VillagerLife = 200;
+        private const int VillagerLife = 200;
 
         public Villager(MatrixCoords topLeft, char[,] body, MatrixCoords speed, 
             int attackPower, int defencePower, int gold)
@@ -13,6 +13,6 @@ namespace FightersCon
             this.Gold = gold;
         }
 
-        public int Gold { get; set; }
+        public int Gold { get; private set; }
     }
 }

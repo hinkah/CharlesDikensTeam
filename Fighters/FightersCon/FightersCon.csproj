@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="BonusType.cs" />
     <Compile Include="DirectionType.cs" />
-    <Compile Include="Init.cs" />
     <Compile Include="InvalidPowerValueException.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MovableObjects\Animal.cs" />

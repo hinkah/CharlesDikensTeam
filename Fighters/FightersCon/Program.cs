@@ -7,22 +7,74 @@ namespace FightersCon
     {
         public const int consoleRows = 39;
         public const int consoleCols = 100;
-        
+        private const int HeroDataArealength = 12;
+
+        public const int LevelExitExperience = 500;
+
         static void Main()
         {
-            Console.SetBufferSize(112, 39);
-            Console.SetWindowSize(112, 39);
+            Console.SetBufferSize(consoleCols + HeroDataArealength, consoleRows);
+            Console.SetWindowSize(consoleCols + HeroDataArealength, consoleRows);
 
             Engine engine = new Engine(new ConsoleRenderer(consoleRows, consoleCols, 0), new KeyboardInterface());
             try
             {
-                engine.Run(100);
+                int level = 1;
+                while (true)
+                {
+                    FillTheMap(engine, level);
+
+                    engine.Run(100);
+
+                    level = 2;
+                }
             }
             catch (InvalidPowerValueException e)
             {
                 Console.Clear();
                 Console.WriteLine(e.Message);
-            }          
+            }
+        }
+
+        public static void FillTheMap(Engine engine, int i)
+        {
+            if (i == 1)
+            {
+                engine.AddObject(new SuperHero(new MatrixCoords(34, 0), new MatrixCoords(0, 0), 500, 300));
+
+                engine.AddObject(new House(new MatrixCoords(0, 86)));
+                engine.AddObject(new Tree(new MatrixCoords(28, 42)));
+                engine.AddObject(new Tree(new MatrixCoords(5, 20)));
+                engine.AddObject(new Tree(new MatrixCoords(9, 50)));
+
+                engine.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(1, -1)));
+                engine.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+                engine.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 1)));
+                engine.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(-1, -1)));
+            }
+            else if (i == 2)
+            {                
+                SuperHero ourHero = (SuperHero)engine.allObjects.Find(h => h is SuperHero);
+                ourHero.TopLeft = new MatrixCoords(34, 0);
+
+                engine.staticObjects.Clear();
+                engine.allObjects.Clear();
+                engine.movingObjects.Clear();
+
+                engine.AddObject(ourHero);
+                engine.AddObject(new House(new MatrixCoords(0, 86)));
+                engine.AddObject(new Tree(new MatrixCoords(0, 72)));
+                engine.AddObject(new Tree(new MatrixCoords(7, 72)));
+                engine.AddObject(new Tree(new MatrixCoords(7, 82)));
+                engine.AddObject(new Tree(new MatrixCoords(25, 42)));
+                engine.AddObject(new Tree(new MatrixCoords(5, 10)));
+                engine.AddObject(new Tree(new MatrixCoords(9, 50)));
+
+                engine.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
+                engine.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+                engine.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
+                engine.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
+            }
         }
     }
 }
