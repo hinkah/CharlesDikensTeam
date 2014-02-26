@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
+using FightersCon.MovableObjects;
+using FightersCon.StaticObjects;
 
 namespace FightersCon
 {
     public class Program
     {
-        public const int consoleRows = 39;
-        public const int consoleCols = 100;
+        public const int ConsoleRows = 39;
+        public const int ConsoleCols = 100;
         private const int HeroDataArealength = 12;
 
         public const int LevelExitExperience = 500;
 
         static void Main()
         {
-            Console.SetBufferSize(consoleCols + HeroDataArealength, consoleRows);
-            Console.SetWindowSize(consoleCols + HeroDataArealength, consoleRows);
+            Console.SetBufferSize(ConsoleCols + HeroDataArealength, ConsoleRows);
+            Console.SetWindowSize(ConsoleCols + HeroDataArealength, ConsoleRows);
 
-            Engine engine = new Engine(new ConsoleRenderer(consoleRows, consoleCols, 0), new KeyboardInterface());
+            Engine engine = new Engine(new ConsoleRenderer(ConsoleRows, ConsoleCols, 0), new KeyboardInterface());
             try
             {
                 int level = 1;
@@ -54,12 +55,12 @@ namespace FightersCon
             }
             else if (i == 2)
             {                
-                SuperHero ourHero = (SuperHero)engine.allObjects.Find(h => h is SuperHero);
+                SuperHero ourHero = (SuperHero)engine.AllObjects.Find(h => h is SuperHero);
                 ourHero.TopLeft = new MatrixCoords(34, 0);
 
-                engine.staticObjects.Clear();
-                engine.allObjects.Clear();
-                engine.movingObjects.Clear();
+                engine.StaticObjects.Clear();
+                engine.AllObjects.Clear();
+                engine.MovingObjects.Clear();
 
                 engine.AddObject(ourHero);
                 engine.AddObject(new House(new MatrixCoords(0, 86)));

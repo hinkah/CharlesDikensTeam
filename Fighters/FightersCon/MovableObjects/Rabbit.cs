@@ -1,9 +1,9 @@
 ﻿
-namespace FightersCon
+namespace FightersCon.MovableObjects
 {
     public class Rabbit : Animal
     {
-        private static char[,] rabbitBody = new char[,]
+        private static readonly char[,] rabbitBody = new char[,]
         {   { '(', '\\', '_',  '_', '_', '/',  ')'  },
             { '(', '=', '\'', '.', '\'', '=',  ')'  },
             { '(', '"', ')',  '_', '(',  '"',  ')'  }

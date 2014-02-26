@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FightersCon
+namespace FightersCon.StaticObjects
 {
     public class Fence : StaticObject
     {

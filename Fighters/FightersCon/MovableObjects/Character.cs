@@ -1,5 +1,5 @@
 ﻿
-namespace FightersCon
+namespace FightersCon.MovableObjects
 {
     public abstract class Character : MovableObject
     {

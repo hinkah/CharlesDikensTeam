@@ -1,5 +1,5 @@
 ﻿
-namespace FightersCon
+namespace FightersCon.MovableObjects
 {
     public class Trader : Character
     {

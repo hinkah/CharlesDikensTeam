@@ -2,15 +2,16 @@
 {
     using System;
     using System.Linq;
+    using FightersCon.MovableObjects;
 
     public class Menu
     {
-        private static string[] MenuItems;
+        private static string[] menuItems;
         private int index;
         private static bool stayInMenu;
         private static bool[] active;
-        private SuperHero superHero;
-        private MovableObject enemy;
+        private readonly SuperHero superHero;
+        private readonly MovableObject enemy;
 
         public Menu(SuperHero hero, MovableObject movableObject)
         {
@@ -34,9 +35,9 @@
 
         public static void MenuInitialize()
         {
-            MenuItems = new string[] { "1. Attack", "2. Escape" }; //, "3. Buy LIFE", "4. Buy ARMOUR", "5. Buy AMMUNITION", "6. Buy ATTACK", "7. Exit from this MenuItems." };
+            menuItems = new string[] { "1. Attack", "2. Escape" }; //, "3. Buy LIFE", "4. Buy ARMOUR", "5. Buy AMMUNITION", "6. Buy ATTACK", "7. Exit from this menuItems." };
 
-            active = new bool[MenuItems.Length];
+            active = new bool[menuItems.Length];
             for (int i = 0; i < active.Length; i++)
             {
                 active[i] = true;
@@ -48,7 +49,7 @@
             ConsoleKeyInfo info = Console.ReadKey();
             if (info.Key == ConsoleKey.DownArrow)
             {
-                if (index < MenuItems.Length - 1)
+                if (index < menuItems.Length - 1)
                 {
                     index++;
                 }
@@ -76,32 +77,32 @@
             int cursorTop = 13;
             int cursorLeft = 40;
 
-            for (int i = 0; i < MenuItems.Length; i++)
+            for (int i = 0; i < menuItems.Length; i++)
             {
                 Console.SetCursorPosition(cursorLeft, cursorTop + i);
                 if (i == this.index && active[i] == true)
                 {
                     Console.BackgroundColor = ConsoleColor.Blue;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(MenuItems[i]);
+                    Console.Write(menuItems[i]);
                 }
                 else if (i == this.index && active[i] == false)
                 {
                     Console.BackgroundColor = ConsoleColor.Blue;
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write(MenuItems[i]);
+                    Console.Write(menuItems[i]);
                 }
                 else if (active[i] == true)
                 {
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(MenuItems[i]);
+                    Console.Write(menuItems[i]);
                 }
                 else if (active[i] == false)
                 {
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write(MenuItems[i]);
+                    Console.Write(menuItems[i]);
                 }
             }
             Console.BackgroundColor = ConsoleColor.Black;

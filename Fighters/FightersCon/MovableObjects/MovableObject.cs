@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FightersCon
+namespace FightersCon.MovableObjects
 {
     public abstract class MovableObject : WorldObject, IMovable, IControllable
     {

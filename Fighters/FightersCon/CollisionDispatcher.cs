@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FightersCon.MovableObjects;
+using FightersCon.StaticObjects;
 
 namespace FightersCon
 {
@@ -8,7 +10,7 @@ namespace FightersCon
     {
         public static bool HandleCollisions(List<MovableObject> movingObjects, List<StaticObject> staticObjects) // this method calls a second method for a collision of moving andstatic onjects
         {
-            //HandleMovingWithStaticCollisions(movingObjects, staticObjects);
+            //HandleMovingWithStaticCollisions(MovingObjects, StaticObjects);
             bool exitCollision = false;
 
             var movingObjectWithoutHero = new List<MovableObject>();

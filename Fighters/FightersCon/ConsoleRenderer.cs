@@ -6,18 +6,18 @@ namespace FightersCon
 {
     public class ConsoleRenderer : IRenderer 
     {
-        readonly int _renderContextMatrixRows; // the size of the console:
-        readonly int _renderContextMatrixCols;
-        readonly char[,] _renderContextMatrix;
-        readonly int _menuOffset; // defines the current info board throughout the game process
+        readonly int renderContextMatrixRows; // the size of the console:
+        readonly int renderContextMatrixCols;
+        readonly char[,] renderContextMatrix;
+        readonly int menuOffset; // defines the current info board throughout the game process
 
         public ConsoleRenderer(int visibleConsoleRows, int visibleConsoleCols, int rowsOffset) // constructor - we create a new object of the ConsoleRenderer class
         {
-            _renderContextMatrix = new char[visibleConsoleRows, visibleConsoleCols];
+            renderContextMatrix = new char[visibleConsoleRows, visibleConsoleCols];
 
-            this._renderContextMatrixRows = _renderContextMatrix.GetLength(0);
-            this._renderContextMatrixCols = _renderContextMatrix.GetLength(1);
-            this._menuOffset = rowsOffset;
+            this.renderContextMatrixRows = renderContextMatrix.GetLength(0);
+            this.renderContextMatrixCols = renderContextMatrix.GetLength(1);
+            this.menuOffset = rowsOffset;
             this.ClearQueue();
         }
 
@@ -30,17 +30,17 @@ namespace FightersCon
 
             MatrixCoords objTopLeft = obj.GetTopLeft(); // we extract the top left point from the object itself.
 
-            int lastRow = Math.Min(objTopLeft.Row + imageRows, this._renderContextMatrixRows); // prevents us from getting out of the console.
-            int lastCol = Math.Min(objTopLeft.Col + imageCols, this._renderContextMatrixCols); // prevents us from getting out of the console.
+            int lastRow = Math.Min(objTopLeft.Row + imageRows, this.renderContextMatrixRows); // prevents us from getting out of the console.
+            int lastCol = Math.Min(objTopLeft.Col + imageCols, this.renderContextMatrixCols); // prevents us from getting out of the console.
 
             for (int row = obj.GetTopLeft().Row; row < lastRow; row++)
             {
                 for (int col = obj.GetTopLeft().Col; col < lastCol; col++)
                 {
-                    if (row >= 0 && row < _renderContextMatrixRows &&
-                            col >= 0 && col < _renderContextMatrixCols)
+                    if (row >= 0 && row < renderContextMatrixRows &&
+                            col >= 0 && col < renderContextMatrixCols)
                     {
-                        _renderContextMatrix[row, col] = objImage[row - obj.GetTopLeft().Row, col - obj.GetTopLeft().Col];
+                        renderContextMatrix[row, col] = objImage[row - obj.GetTopLeft().Row, col - obj.GetTopLeft().Col];
                     }
                 }
             }
@@ -50,13 +50,13 @@ namespace FightersCon
         {
             var scene = new StringBuilder();
 
-            for (int row = 0; row < this._renderContextMatrixRows; row++)
+            for (int row = 0; row < this.renderContextMatrixRows; row++)
             {
-                for (int col = 0; col < this._renderContextMatrixCols; col++)
+                for (int col = 0; col < this.renderContextMatrixCols; col++)
                 {
-                    scene.Append(this._renderContextMatrix[row, col]);
+                    scene.Append(this.renderContextMatrix[row, col]);
                 }
-                if (row != _renderContextMatrixRows - 1)
+                if (row != renderContextMatrixRows - 1)
                     scene.Append(Environment.NewLine);
             }
 
@@ -68,11 +68,11 @@ namespace FightersCon
 
         public void ClearQueue() // clearing the matrix which includes all the symbols of all objects.
         {
-            for (int row = 0; row < this._renderContextMatrixRows; row++)
+            for (int row = 0; row < this.renderContextMatrixRows; row++)
             {
-                for (int col = 0; col < this._renderContextMatrixCols; col++)
+                for (int col = 0; col < this.renderContextMatrixCols; col++)
                 {
-                    this._renderContextMatrix[row, col] = ' ';
+                    this.renderContextMatrix[row, col] = ' ';
                 }
             }
         }

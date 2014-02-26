@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace FightersCon
+namespace FightersCon.StaticObjects
 {
     public class House : StaticObject
     {
-        public static char[,] houseBody = new char[,] {{' ', ' ', ' ', '@', ' ', '@', ' ', '@', ' ', ' ', ' ', ' ', ' '},
+        public static char[,] HouseBody = new char[,] {{' ', ' ', ' ', '@', ' ', '@', ' ', '@', ' ', ' ', ' ', ' ', ' '},
                                                        {' ', ' ', '[', ']', '_', '_', '_', ' ', ' ', ' ', ' ', ' ', ' '},
                                                        {' ', '/', ' ', ' ', ' ', ' ', '/', '\\', '_', '_', '_', '_', ' '},
                                                        {'/', '_', '/', '\\', '_', '/', '/', '_', '_', '_', '_', '/', '\\'},
                                                        {'|', ' ', '|', '|', ' ', '|', '|', '|', ' ', ' ', '|', '|', '|'},
                                                        {'|', ' ', '|', '|', ' ', '|', '|', '|', '_', '_', '|', '|', '|'}};
         public House(MatrixCoords topLeft)
-            : base(topLeft, houseBody)
+            : base(topLeft, HouseBody)
         {
             IsDestroyable = false;
             this.Life = int.MaxValue;

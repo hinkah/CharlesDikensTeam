@@ -1,5 +1,5 @@
 ﻿
-namespace FightersCon
+namespace FightersCon.MovableObjects
 {
     public class SuperHero : Character
     {
@@ -7,13 +7,13 @@ namespace FightersCon
         private const int SuperHeroGold = 100;
         private const int SuperHeroExpirience = 1;
 
-        private static char[,] HeroBody = new char[,] {{'/', '/', '-', '-', '\\'},
+        private static readonly char[,] heroBody = new char[,] {{'/', '/', '-', '-', '\\'},
                                                       {'C', ' ', 'O',' ', 'O'},
                                                       {' ', '\\', ' ',' ', '>'},
                                                       {' ', ' ', '\\','_', '-'}};                
 
         public SuperHero(MatrixCoords topLeft, MatrixCoords speed,int attackPower, int defencePower)
-            : base(topLeft, HeroBody, speed, attackPower, defencePower)
+            : base(topLeft, heroBody, speed, attackPower, defencePower)
         {
             this.Life = SuperHeroLife;
             this.Gold = SuperHeroGold;

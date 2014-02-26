@@ -1,4 +1,4 @@
-﻿namespace FightersCon
+﻿namespace FightersCon.StaticObjects
 {
     public abstract class StaticObject : WorldObject
     {

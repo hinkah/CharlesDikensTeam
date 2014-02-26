@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FightersCon.MovableObjects;
 
 namespace FightersCon
 {
@@ -52,7 +53,7 @@ namespace FightersCon
             }
             else if (keyInfo.Key.Equals(ConsoleKey.RightArrow))
             {
-                if ((hero.TopLeft.Col < (Program.consoleCols - hero.GetImage().GetLength(1) - 1)) && !collisionRight)
+                if ((hero.TopLeft.Col < (Program.ConsoleCols - hero.GetImage().GetLength(1) - 1)) && !collisionRight)
                 {
                     hero.TopLeft = hero.TopLeft + oneRight;
                 }
@@ -68,7 +69,7 @@ namespace FightersCon
             }
             else if (keyInfo.Key.Equals(ConsoleKey.DownArrow))
             {
-                if ((hero.TopLeft.Row < (Program.consoleRows - hero.GetImage().GetLength(0))) && !collisionBottom)
+                if ((hero.TopLeft.Row < (Program.ConsoleRows - hero.GetImage().GetLength(0))) && !collisionBottom)
                 {
                     hero.TopLeft = hero.TopLeft + oneDown;
                 }
