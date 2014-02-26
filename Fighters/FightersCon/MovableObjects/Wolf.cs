@@ -9,8 +9,8 @@ namespace FightersCon
                                                        {' ', '/', '_', ' ', ' ', '_', ' ', ' ', ' ', '|'},
                                                        {' ', '\\', '/', '_', '/', '|', '|', ')', ' ', '/'},
                                                        {' ', ' ', ' ', ' ', '\'', '_', '_', '_', '\'', ' '}};
-        public Wolf(MatrixCoords topLeft, MatrixCoords speed)
-            : base(topLeft, WolfBody, speed, AnimalAttack, 0)
+        public Wolf(MatrixCoords topLeft, MatrixCoords speed, int attackPower)
+            : base(topLeft, WolfBody, speed, attackPower, 0)
         {
             this.Life = AnimalLife;
             this.Bonus = AnimalAttack;

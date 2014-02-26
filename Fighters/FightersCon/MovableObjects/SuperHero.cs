@@ -3,7 +3,7 @@ namespace FightersCon
 {
     public class SuperHero : Character
     {
-        private const int SuperHeroLife = 1000;
+        private const int SuperHeroLife = 200;
         private const int SuperHeroGold = 100;
         private const int SuperHeroExpirience = 1;
 
@@ -26,10 +26,10 @@ namespace FightersCon
         // methods
         public bool Attack(MovableObject enemy)
         {
-            double enemyAtacs = this.Life / enemy.AttackPower;
-            double heroAttacs = enemy.Life / this.AttackPower;
+            //double enemyAtacs = this.Life / enemy.AttackPower;
+            //double heroAttacs = enemy.Life / this.AttackPower;
 
-            if (heroAttacs <= enemyAtacs)
+            if (enemy.AttackPower <= this.AttackPower)
             {
                 this.Experience += enemy.Life;
                 this.AttackPower += this.Experience / 10;

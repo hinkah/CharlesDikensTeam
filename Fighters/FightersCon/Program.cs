@@ -47,8 +47,8 @@ namespace FightersCon
                 engine.AddObject(new Tree(new MatrixCoords(5, 20)));
                 engine.AddObject(new Tree(new MatrixCoords(9, 50)));
 
-                engine.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(1, -1)));
-                engine.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+                engine.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(1, -1), 550));
+                engine.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0), 520));
                 engine.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 1)));
                 engine.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(-1, -1)));
             }
@@ -70,8 +70,8 @@ namespace FightersCon
                 engine.AddObject(new Tree(new MatrixCoords(5, 10)));
                 engine.AddObject(new Tree(new MatrixCoords(9, 50)));
 
-                engine.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1)));
-                engine.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0)));
+                engine.AddObject(new Warrior(new MatrixCoords(25, 100), new MatrixCoords(0, -1), 800));
+                engine.AddObject(new Wolf(new MatrixCoords(32, 60), new MatrixCoords(-1, 0), 730));
                 engine.AddObject(new Rabbit(new MatrixCoords(0, 26), new MatrixCoords(1, 0)));
                 engine.AddObject(new Monkey(new MatrixCoords(15, 0), new MatrixCoords(0, 1)));
             }
