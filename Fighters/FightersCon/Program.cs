@@ -10,7 +10,7 @@ namespace FightersCon
         public const int ConsoleCols = 100;
         private const int HeroDataArealength = 12;
 
-        public const int LevelExitExperience = 500;
+        public const int LevelExitExperience = 500;        
 
         static void Main()
         {

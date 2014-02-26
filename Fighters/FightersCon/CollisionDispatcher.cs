@@ -8,6 +8,7 @@ namespace FightersCon
 {
     public static class CollisionDispatcher
     {
+
         public static bool HandleCollisions(List<MovableObject> movingObjects, List<StaticObject> staticObjects) // this method calls a second method for a collision of moving andstatic onjects
         {
             //HandleMovingWithStaticCollisions(MovingObjects, StaticObjects);
@@ -38,6 +39,7 @@ namespace FightersCon
                 {
                     //Menu.MainMenu(superHero, movingObject);
                     Menu menu = new Menu(superHero, movingObject);
+                    menu.ExitGame += new EventHandler(ShowExitMessage);
                     menu.ShowMenu();
                 }
             }
@@ -177,6 +179,24 @@ namespace FightersCon
                 case DirectionType.All: return bottom || left || right || top;
                 default: return false;
             }
+        }
+
+
+        public static void ShowExitMessage(object sender, EventArgs e)
+        {
+            Console.Clear();
+            Console.SetCursorPosition(40, 13);
+            Console.Write("GAME OVER!");
+            SuperHero hero = sender as SuperHero;
+            if (hero != null)
+            {
+                Console.SetCursorPosition(34, 14);
+                Console.WriteLine("Your experience: {0}", hero.Experience);
+            }
+            Console.SetCursorPosition(35, 15);
+            Console.WriteLine("Press any key to EXIT");
+            Console.ReadKey();
+            Environment.Exit(0);
         }
     }
 }

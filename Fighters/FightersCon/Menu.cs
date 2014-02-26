@@ -6,6 +6,8 @@
 
     public class Menu
     {
+        public event EventHandler ExitGame;
+
         private static string[] menuItems;
         private int index;
         private static bool stayInMenu;
@@ -24,7 +26,7 @@
         public void ShowMenu()
         {
             MenuInitialize();
-            DrawMenu();  
+            DrawMenu();
 
             while (stayInMenu)
             {
@@ -120,13 +122,7 @@
                         }
                         else
                         {
-                            Console.Clear();
-                            Console.SetCursorPosition(40, 13);
-                            Console.Write("GAME OVER!");
-                            Console.SetCursorPosition(20, 14);
-                            Console.Write("Press any key to EXIT");
-                            Console.ReadKey();
-                            Environment.Exit(0);
+                            ExitGame(this.superHero, new EventArgs());
                         }
                         stayInMenu = false;
                     }
